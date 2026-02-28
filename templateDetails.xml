@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="6.0.0" type="template" client="site" method="upgrade">
+	<name>Bootstrap 3.4</name>
+	<version>6.0.0</version>
+	<creationDate>2/1/2026</creationDate>
+	<author>Michael E Allen</author>
+	<authorEmail>michael@we-write-code-not-art.com</authorEmail>
+	<copyright>Copyright(C)2016 Michael E Allen. All rights reserved.</copyright>
+	<description>Basic Bootstrap 3.4 enabled template</description>
+    <updateservers>
+      <server type="extension" name="mod_socialbadges" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
+    </updateservers>
+	<files>
+	</files>
+	<positions>
+		<position>menu-collapsed</position>
+		<position>profile-collapsed</position>
+		<position>footer-collapsed</position>
+		<position>banner</position>
+		<position>profile</position>
+		<position>search</position>
+		<position>breadcrumbs</position>
+		<position>main-menu</position>
+		<position>sidebar-right</position>
+		<position>sidebar-left</position>
+		<position>content-header</position>
+		<position>content-footer</position>
+		<position>footer</position>
+		<position>footer-extra-small</position>
+    <position>error-banner-name</position>
+    <position>error-banner-description</position>
+    <position>error-xs-banner-name</position>
+    <position>error-xs-banner-description</position>
+		<position>error-content-header</position>
+    <position>error-content</position>
+		<position>error-content-footer</position>
+		<position>debug</position>
+	</positions>
+  <layouts>
+      <layout option="com_content" view="article" />
+      <layout option="com_content" view="category" />
+      <layout option="com_content" view="categories" />
+  </layouts>  
+    <config>
+		<fields name="params">
+			<fieldset name="theme" label="Theme">
+				<field name="cssFile" type="filelist" default="" label="CSS File" description="pick a CSS file in this template's css folder" directory="/templates/bootstrap3.4/style" filter="" exclude="" stripext="" />
+
+				<field name="cssErrorFile" type="filelist" default="" label="CSS File for Errors" description="pick a CSS file in this template's css folder for displaying error pages" directory="/templates/bootstrap3.4/style" filter="" exclude="" stripext="" />
+
+				<field name="faviconDir" type="folderlist" default="" label="Favicon" description="pick a sub-folder under this template's favicon folder" directory="templates/bootstrap3.4/images/favicons" filter="" exclude="" stripext="" />
+
+				<field
+					name="noteFavicons"
+					type="note"
+					description="try &lt;a href=&quot;https://realfavicongenerator.net/&quot; target=&quot;_newwindow&quot;&gt;realfavicongenerator.net&lt;/a&gt; for a favicon generator.
+            &lt;p&gt;You must have: 
+            &lt;ul&gt;
+            &lt;li&gt;apple-touch-icon.png&lt;/li&gt;
+            &lt;li&gt;favicon.icon&lt;/li&gt;
+            &lt;li&gt;favicon.svg&lt;/li&gt;
+            &lt;li&gt;favicon-96x96.png&lt;/li&gt;
+            &lt;li&gt;site.webmanifest&lt;/li&gt;
+            &lt;li&gt;web-app-manifest-192x192.png&lt;/li&gt;
+            &lt;li&gt;web-app-manifest-512x512.png&lt;/li&gt;
+            &lt;/ul&gt;"
+				/>
+
+				<field name="themeColor" class="" type="color" default=""
+					label="Mobile Theme Color"
+					description="Theme Color for Mobile Browsers" />
+					
+				<field name="ieTilecolor" class="" type="color" default=""
+					label="IE Tiles"
+					description="Tile Color for IE" />
+			</fieldset>
+
+			<fieldset name="layout" label="Layout">
+				<field name="fluidContainer"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Site"
+					description="Is the entire page a fluid or fixed size?"
+				>
+					<option value="1">Fluid</option>
+					<option value="0">Static</option>
+				</field>
+				<field name="fluidBanner"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Banner"
+					description="Is the banner a fluid (streched to the entire window) or a fixed size?"
+				>
+					<option value="1">Fluid</option>
+					<option value="0">Static</option>
+				</field>
+				<field name="fluidxsBanner"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Extra Small Banner"
+					description="Is the mobile banner fluid (streched to the entire window) or a fixed size?"
+				>
+					<option value="1">Fluid</option>
+					<option value="0">Static</option>
+				</field>
+				<field name="fluidMainMenu"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Main Menu"
+					description="is the main menu fluid (streched to the entire window), fixed, or streched to the main content's container"
+				>
+					<option value="1">Fluid</option>
+					<option value="0">Static</option>
+					<option value="2">Stetched</option>
+				</field>
+			</fieldset>
+				
+			<fieldset name="rounded_corners" label="Rounded Corners">
+				<field name="templateHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Site"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="bannerHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Banner"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="breadcrumbsHaveRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Breadcrumbs"
+					description=""
+				>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="mainmenuHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Main Menu"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mainContentHasRoundedCorners" showon="mainContentInWell:1"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Main Content"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sidebarLeftHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Sidebar Left"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sidebarRightHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Sidebar Right"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="footerInnerHasRoundedCorners"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Inner Footer"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="site" label="Site">
+				<field type="spacer" name="" label="&lt;h3&gt;Name&lt;/h3&gt;" />
+					<field name="siteTitle"  type="text" default=""
+						label="Site"
+						description="Alternate page title for banners and collapsed menu"
+						filter="string" />
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="templateBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="Background image for entire page" />
+					<field name="templateBackgroundImagePositionX" showon="templateBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="templateBackgroundImagePositionXValue" type="text" default="" showon="templateBackgroundImage!:[AND]templateBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="templateBackgroundImagePositionY" showon="templateBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="templateBackgroundImagePositionYValue" type="text" default="" showon="templateBackgroundImage!:[AND]templateBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="templateBackgroundImageRepeat" showon="templateBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+
+					<field name="templateBackgroundImageAttachment" showon="templateBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="scroll"
+						label="Attachment"
+						description="Should the background be fixed or scroll with the rest of the page?"
+					>
+						<option value="scroll">Scroll</option>
+						<option value="fixed">Fixed</option>
+					</field>
+					<field name="templateBackgroundImageSize" showon="templateBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="auto"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="auto">Auto</option>
+						<option value="contain">Contain</option>
+						<option value="cover">Cover</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="templateBackgroundImageSizeValue" class="" type="text" default="" showon="templateBackgroundImage!:[AND]templateBackgroundImageSize:value"
+						label="Value"
+						description="" />
+						
+				<field type="spacer" name="" label="&lt;h3&gt;Padding&lt;/h3&gt;" />
+					<field name="templatePaddingTop"  type="text" default=""
+						label="Top"
+						description=""
+						filter="string" />
+					<field name="templatePaddingBottom"  type="text" default=""
+						label="Bottom"
+						description=""
+						filter="string" />
+			</fieldset>
+			
+			<fieldset name="banner" label="Banner">
+				<field type="spacer" name="" label="&lt;h3&gt;Name and Description&lt;/h3&gt;" />
+					<field name="bannerShowSiteName"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="1"
+						label="Show Name?"
+						description="Should the site's name be shown in the banner (General Title or Alternate Banner Title)"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field name="bannerSiteName"  type="text" default="" showon="bannerShowSiteName:1"
+						label="Name (Override)"
+						description="Alternate page title (overrides General Title) "
+						filter="string" />
+					<field name="bannerSiteNameHorizontalAlignment" showon="bannerShowSiteName:1"
+						type="radio"
+						class="btn-group"
+						default="text-left"
+						label="Horizontal Alignment"
+						description=""
+					>
+						<option value="text-left">Left</option>
+						<option value="text-center">Center</option>
+						<option value="text-right">Right</option>
+					</field>
+					<field name="bannerSiteNameVerticalAlignment" showon="bannerShowSiteName:1"
+						type="radio"
+						class="btn-group"
+						default="top"
+						label="Vertical Alignment"
+						description=""
+					>
+						<option value="top">Top</option>
+						<option value="middle">Middle</option>
+						<option value="bottom">Bottom</option>
+					</field>
+						
+					<field name="bannerShowSiteDescription"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="1"
+						label="Show Description?"
+						description="Should the site's description be shown in the banner (General Description or Alternate Banner Description)"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="bannerSiteDescription"  type="editor" default="" showon="bannerShowSiteDescription:1"
+						label="Description"
+						description="Alternate site description (overrides General Description)"
+						filter="safehtml" />
+
+				<field type="spacer" name="" label="&lt;h3&gt;Size&lt;/h3&gt;" />
+					<field name="bannerSizeType"
+						type="radio"
+						class="btn-group"
+						default="text-left"
+						label="Height"
+						description=""
+					>
+						<option value="auto">Auto</option>
+						<option value="fixed">Fixed</option>
+						<option value="parallax">Parallax</option>
+						<option value="background">Background</option>
+					</field>
+					<field name="bannerSizeValue" type="text" default="" showon="bannerSizeType:fixed"
+						label="Value"
+						description=""
+						filter="string" />
+
+				<field type="spacer" name="" label="&lt;h3&gt;Parallax&lt;/h3&gt;" />
+					<field name="bannerParallaxImage" class="" type="media" default=""
+						label="Image"
+						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+					<field name="bannerParallaxSpeed" type="text" default="" showon="bannerParallaxImage!:"
+						label="Speed"
+						description=""
+						filter="string" />
+					
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="bannerBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+					<field name="bannerBackgroundImageSize" showon="bannerBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="bannerBackgroundImageSizeValue" class="" type="text" default="" showon="bannerBackgroundImage!:[AND]bannerBackgroundImageSize:value"
+						label="Value"
+						description="" />
+					<field name="bannerBackgroundImagePositionX" showon="bannerBackgroundImage!:[AND]bannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="bannerBackgroundImagePositionXValue" type="text" default="" showon="bannerBackgroundImage!:[AND]bannerBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="bannerBackgroundImagePositionY" showon="bannerBackgroundImage!:[AND]bannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="bannerBackgroundImagePositionYValue" type="text" default="" showon="bannerBackgroundImage!:[AND]bannerBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+
+					<field name="bannerBackgroundImageRepeat" showon="bannerBackgroundImage!:[AND]bannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+				<field type="spacer" name="" label="&lt;h3&gt;Logo&lt;/h3&gt;" />
+					<field name="bannerLogoImage" class="" type="media" default=""
+						label="Image"
+						description="Logo to display next to site title" />
+					<field name="bannerLogoPlacement" showon="bannerLogoImage!:"
+						type="radio"
+						class="btn-group"
+						default="media-left"
+						label="Alignment"
+						description="Logo placement relative to the title and description"
+					>
+						<option value="media-left">Left</option>
+						<option value="media-right">Right</option>
+					</field>
+
+				<field type="spacer" name="" label="&lt;h3&gt;Padding&lt;/h3&gt;" />
+					<field type="spacer" name="" label="&lt;h4&gt;Outer&lt;/h43&gt;" />
+						<field name="bannerPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="bannerPaddingBottom"  type="text" default=""
+							label="Bottom"
+							description=""
+							filter="string" />
+					<field type="spacer" name="" label="&lt;h4&gt;Inner&lt;/h43&gt;" />
+						<field name="bannerTextPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="bannerTextPaddingLeft"  type="text" default=""
+							label="Left"
+							description=""
+							filter="string" />
+						<field name="bannerTextPaddingRight"  type="text" default=""
+							label="Right"
+							description=""
+							filter="string" />					
+			</fieldset>
+
+			<fieldset name="xsBanner" label="Extra Small Banner">
+				<field type="spacer" name="" label="&lt;h3&gt;Name and Description&lt;/h3&gt;" />
+					<field name="xsBannerShowSiteName"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="1"
+						label="Show Site Name?"
+						description=""
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="xsBannerSiteName"  type="text" default="" showon="xsBannerShowSiteName:1"
+						label="Name (Override)"
+						description="JFIELD_ALT_PAGE_TITLE_LABEL"
+						filter="string" />
+					<field name="xsBannerSiteNameAlignment" showon="xsBannerShowSiteName:1"
+						type="radio"
+						class="btn-group"
+						default="text-left"
+						label="Alignment"
+						description=""
+					>
+						<option value="text-left">Left</option>
+						<option value="text-center">Center</option>
+						<option value="text-right">Right</option>
+					</field>
+					<field name="xsBannerShowSiteDescription"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="0"
+						label="Show Site Description?"
+						description=""
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="xsBannerSiteDescription"  type="editor" default="" showon="xsBannerShowSiteDescription:1"
+						label="Description (Override)"
+						description="JGLOBAL_SUBHEADING_DESC"
+						filter="safehtml" />
+						
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="xsBannerBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="" />						
+					<field name="xsBannerBackgroundImageSize" showon="xsBannerBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsBannerBackgroundImageSizeValue" class="" type="text" default="" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImageSize:value"
+						label="Value"
+						description="" />
+					<field name="xsBannerBackgroundImagePositionX" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsBannerBackgroundImagePositionXValue" type="text" default="" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsBannerBackgroundImagePositionY" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsBannerBackgroundImagePositionYValue" type="text" default="" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsBannerBackgroundImageRepeat" showon="xsBannerBackgroundImage!:[AND]xsBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+					<field name="xsBannerFixedHeight" class="" type="text" default=""
+						label="Fixed Height (pixels)"
+						description="200 is common" />
+				<field type="spacer" name="" label="&lt;h3&gt;Padding&lt;/h3&gt;" />
+					<field type="spacer" name="" label="&lt;h4&gt;Outer&lt;/h3&gt;" />
+						<field name="xsBannerPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="xsBannerPaddingBottom"  type="text" default=""
+							label="Bottom"
+							description=""
+							filter="string" />
+
+					<field type="spacer" name="" label="&lt;h4&gt;Inner&lt;/h3&gt;" />
+						<field name="xsBannerTextPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="xsBannerTextPaddingLeft"  type="text" default=""
+							label="Left"
+							description=""
+							filter="string" />
+						<field name="xsBannerTextPaddingRight"  type="text" default=""
+							label="Right"
+							description=""
+							filter="string" />
+			</fieldset>
+
+			<fieldset name="errorSite" label="Site [Error]">
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="errorSiteBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="Background image for entire page" />
+					<field name="errorSiteBackgroundImagePositionX" showon="errorSiteBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorSiteBackgroundImagePositionXValue" type="text" default="" showon="errorSiteBackgroundImage!:[AND]errorSiteBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="errorSiteBackgroundImagePositionY" showon="errorSiteBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorSiteBackgroundImagePositionYValue" type="text" default="" showon="errorSiteBackgroundImage!:[AND]errorSiteBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="errorSiteBackgroundImageRepeat" showon="errorSiteBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+
+					<field name="errorSiteBackgroundImageAttachment" showon="errorSiteBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="scroll"
+						label="Attachment"
+						description="Should the background be fixed or scroll with the rest of the page?"
+					>
+						<option value="scroll">Scroll</option>
+						<option value="fixed">Fixed</option>
+					</field>
+					<field name="errorSiteBackgroundImageSize" showon="errorSiteBackgroundImage!:"
+						type="radio"
+						class="btn-group"
+						default="auto"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="auto">Auto</option>
+						<option value="contain">Contain</option>
+						<option value="cover">Cover</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorSiteBackgroundImageSizeValue" class="" type="text" default="" showon="errorSiteBackgroundImage!:[AND]templateBackgroundImageSize:value"
+						label="Value"
+						description="" />
+			</fieldset>
+
+			<fieldset name="errorBanner" label="Banner [Error]">
+				<field type="spacer" name="" label="&lt;h3&gt;Size&lt;/h3&gt;" />
+					<field name="errorBannerSizeType"
+						type="radio"
+						class="btn-group"
+						default="text-left"
+						label="Height"
+						description=""
+					>
+						<option value="auto">Auto</option>
+						<option value="fixed">Fixed</option>
+						<option value="parallax">Parallax</option>
+						<option value="background">Background</option>
+					</field>
+					<field name="errorBannerSizeValue" type="text" default="" showon="errorBannerSizeType:fixed"
+						label="Value"
+						description=""
+						filter="string" />
+
+				<field type="spacer" name="" label="&lt;h3&gt;Parallax&lt;/h3&gt;" />
+					<field name="errorBannerParallaxImage" class="" type="media" default=""
+						label="Image"
+						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+					<field name="errorBannerParallaxSpeed" type="text" default="" showon="errorBannerParallaxImage!:"
+						label="Speed"
+						description=""
+						filter="string" />
+					
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="errorBannerBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+					<field name="errorBannerBackgroundImageSize" showon="errorBannerBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorBannerBackgroundImageSizeValue" class="" type="text" default="" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImageSize:value"
+						label="Value"
+						description="" />
+					<field name="errorBannerBackgroundImagePositionX" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorBannerBackgroundImagePositionXValue" type="text" default="" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="errorBannerBackgroundImagePositionY" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="errorBannerBackgroundImagePositionYValue" type="text" default="" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+
+					<field name="errorBannerBackgroundImageRepeat" showon="errorBannerBackgroundImage!:[AND]errorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+				<field type="spacer" name="" label="&lt;h3&gt;Logo&lt;/h3&gt;" />
+					<field name="errorBannerLogoImage" class="" type="media" default=""
+						label="Image"
+						description="Logo to display next to site title" />
+					<field name="errorBannerLogoPlacement" showon="errorBannerLogoImage!:"
+						type="radio"
+						class="btn-group"
+						default="media-left"
+						label="Alignment"
+						description="Logo placement relative to the title and description"
+					>
+						<option value="media-left">Left</option>
+						<option value="media-right">Right</option>
+					</field>
+
+				<field type="spacer" name="" label="&lt;h3&gt;Padding&lt;/h3&gt;" />
+					<field type="spacer" name="" label="&lt;h4&gt;Outer&lt;/h43&gt;" />
+						<field name="errorBannerPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="errorBannerPaddingBottom"  type="text" default=""
+							label="Bottom"
+							description=""
+							filter="string" />
+					<field type="spacer" name="" label="&lt;h4&gt;Inner&lt;/h43&gt;" />
+						<field name="errorBannerTextPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="errorBannerTextPaddingLeft"  type="text" default=""
+							label="Left"
+							description=""
+							filter="string" />
+						<field name="errorBannerTextPaddingRight"  type="text" default=""
+							label="Right"
+							description=""
+							filter="string" />					
+			</fieldset>
+
+			<fieldset name="xsErrorBanner" label="Extra Small Banner [Error]">
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="xsErrorBannerBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="" />						
+					<field name="xsErrorBannerBackgroundImageSize" showon="xsErrorBannerBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsErrorBannerBackgroundImageSizeValue" class="" type="text" default="" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImageSize:value"
+						label="Value"
+						description="" />
+					<field name="xsErrorBannerBackgroundImagePositionX" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsErrorBannerBackgroundImagePositionXValue" type="text" default="" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsErrorBannerBackgroundImagePositionY" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsErrorBannerBackgroundImagePositionYValue" type="text" default="" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsErrorBannerBackgroundImageRepeat" showon="xsErrorBannerBackgroundImage!:[AND]xsErrorBannerBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+					<field name="xsErrorBannerFixedHeight" class="" type="text" default=""
+						label="Fixed Height (pixels)"
+						description="200 is common" />
+				<field type="spacer" name="" label="&lt;h3&gt;Padding&lt;/h3&gt;" />
+					<field type="spacer" name="" label="&lt;h4&gt;Outer&lt;/h3&gt;" />
+						<field name="xsErrorBannerPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="xsErrorBannerPaddingBottom"  type="text" default=""
+							label="Bottom"
+							description=""
+							filter="string" />
+
+					<field type="spacer" name="" label="&lt;h4&gt;Inner&lt;/h3&gt;" />
+						<field name="xsErrorBannerTextPaddingTop"  type="text" default=""
+							label="Top"
+							description=""
+							filter="string" />
+						<field name="xsErrorBannerTextPaddingLeft"  type="text" default=""
+							label="Left"
+							description=""
+							filter="string" />
+						<field name="xsErrorBannerTextPaddingRight"  type="text" default=""
+							label="Right"
+							description=""
+							filter="string" />
+			</fieldset>
+
+			<fieldset name="xsErrorMenu" label="Collapsed Menu [Error]">
+				<field type="spacer" name="" label="&lt;h3&gt;Name&lt;/h3&gt;" />
+					<field name="xsErrorMenuSiteName"  type="text" default="" showon="xsMenuSiteNameType:text"
+						label="Name (Override)"
+						description="JFIELD_ALT_PAGE_TITLE_LABEL"
+						filter="string" />
+			</fieldset>
+
+			<fieldset name="xsMenu" label="Collapsed Menu">
+				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
+					<field name="xsMenuBackgroundImage" class="" type="media" default=""
+						label="Image"
+						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+					<field name="xsMenuBackgroundImageSize" showon="xsMenuBackgroundImage!:"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsMenuBackgroundImageSizeValue" class="" type="text" default="" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImageSize:value"
+						label="Value"
+						description="" />
+					<field name="xsMenuBackgroundImagePositionX" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsMenuBackgroundImagePositionXValue" type="text" default="" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsMenuBackgroundImagePositionY" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="xsMenuBackgroundImagePositionYValue" type="text" default="" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="xsMenuBackgroundImageRepeat" showon="xsMenuBackgroundImage!:[AND]xsMenuBackgroundImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+				<field type="spacer" name="" label="&lt;h3&gt;Brand&lt;/h3&gt;" />
+				<field name="xsMenuBrandImage" class="" type="media" default=""
+						label="Image"
+						description="This will be resized to 44px x 44px" />
+						
+				<field type="spacer" name="" label="&lt;h3&gt;Name&lt;/h3&gt;" />
+					<field name="xsMenuSiteNameType"
+						type="radio"
+						class="btn-group"
+						default="text"
+						label="Text"
+						description=""
+					>
+						<option value="text">Text</option>
+						<option value="image">Image</option>
+					</field>
+					<field name="xsMenuSiteName"  type="text" default="" showon="xsMenuSiteNameType:text"
+						label="Name (Override)"
+						description="JFIELD_ALT_PAGE_TITLE_LABEL"
+						filter="string" />
+					<field name="xsMenuSiteNameImage" class="" type="media" default="" showon="xsMenuSiteNameType:image"
+						label="Image"
+						description="" />
+					<field name="xsMenuSiteNamePlacement"
+						type="radio"
+						class="btn-group"
+						default="media-left"
+						label="Alignment"
+						description="Logo placement relative to the title and description"
+					>
+						<option value="media-left">Left</option>
+						<option value="media-right">Right</option>
+					</field>
+			</fieldset>
+						
+			<fieldset name="mainContent" label="Main Content">
+				<field type="spacer" name="" label="&lt;h3&gt;Content&lt;/h3&gt;" />
+				<field name="mainContentInWell"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="Wrap in a well?"
+					description=""
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>		
+
+			<fieldset name="footer" label="Footer">
+				<field type="spacer" name="" label="&lt;h3&gt;Outer&lt;/h3&gt;" />
+					<field name="footerOuterFixedToBottom"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="0"
+						label="Fixed to bottom?"
+						description=""
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="footerOuterImage" class="" type="media" default=""
+							label="Image"
+							description="" />
+					<field name="footerOuterFixedHeight" class="" type="text" default="" 
+						label="Height of Fixed Area"
+						description="" />
+					
+					<field name="footerOuterImageSize"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerOuterImageSizeValue" class="" type="text" default="" showon="footerOuterImageSize:value"
+						label="Background Size Value"
+						description="" />
+					<field name="footerOuterImagePositionX" showon="footerOuterImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerOuterImagePositionXValue" type="text" default="" showon="footerOuterImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="footerOuterImagePositionY" showon="footerOuterImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerOuterImagePositionYValue" type="text" default="" showon="footerOuterImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="footerOuterImageRepeat" showon="footerOuterImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+					<field name="footerOuterImageAttachment"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="scroll"
+						label="Attachment"
+						description=""
+					>
+						<option value="scroll">Scroll</option>
+						<option value="fixed">Fixed</option>
+					</field>
+
+				<field type="spacer" name="" label="&lt;h3&gt;Inner&lt;/h3&gt;" />
+					<field name="footerInnerFixedToBottom"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="0"
+						label="Fixed to bottom?"
+						description=""
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="footerInnerImage" class="" type="media" default=""
+						label="Image"
+						description="" />
+					<field name="footerInnerFixedHeight" class="" type="text" default="" showon="footerInnerFixedToBottom:1"
+						label="Height of Fixed Area"
+						description="" />
+					<field name="footerInnerImageSize"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="fill"
+						label="Size"
+						description="The size of the background image"
+					>
+						<option value="fixed">Fixed</option>
+						<option value="fill">Fill</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerInnerImageSizeValue" class="" type="text" default="" showon="footerInnerImageSize:value"
+						label="Background Size Value"
+						description="" />
+					<field name="footerInnerImagePositionX" showon="footerInnerImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="left"
+						label="Horizonal Position"
+						description="Sets the initial horizontal position"
+					>
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerInnerImagePositionXValue" type="text" default="" showon="footerInnerImagePositionX:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="footerInnerImagePositionY" showon="footerInnerImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="top"
+						label="Vertical Position"
+						description="Sets the initial vertical position"
+					>
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
+						<option value="value">Value</option>
+					</field>
+					<field name="footerInnerImagePositionYValue" type="text" default="" showon="footerInnerImagePositionY:value"
+						label="Value"
+						description=""
+						filter="string" />
+					<field name="footerInnerImageRepeat" showon="footerInnerImageSize:value,fixed"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="no-repeat"
+						label="Repeat?"
+						description="Repeat the background image horizontally and/or vertically?"
+					>
+						<option value="no-repeat">No repeat</option>
+						<option value="repeat-x">Repeat horizontally</option>
+						<option value="repeat-y">Repeat vertically</option>
+						<option value="repeat">Repeat both</option>
+					</field>
+						<field name="footerInnerImageAttachment"
+							type="radio"
+							class="btn-group btn-group-yesno"
+							default="scroll"
+							label="Attachment"
+							description=""
+						>
+							<option value="scroll">Scroll</option>
+							<option value="fixed">Fixed</option>
+						</field>						
+			</fieldset>
+		</fields>
+	</config>
+</extension>

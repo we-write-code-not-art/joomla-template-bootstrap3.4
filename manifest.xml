@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Bootstrap 3.4</name>
+		<description>Basic Bootstrap 3.4 enabled template</description>
+		<element>bootstrap3.4</element>
+		<type>module</type>
+		<version>6.0.0</version>
+		<infourl title="Boostrap3.4 6.0.0">https://www.we-write-code-not-art.com/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/we-write-code-not-art/joomla-template-bootstrap3.4/releases/download/6.0.0/bootstrap3.4_6.0.0.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Michael E Allen</maintainer>
+		<maintainerurl>https://we-write-code-not-art.com</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="6.0"/>
+		<client>site</client>
+	</update>
+</updates>

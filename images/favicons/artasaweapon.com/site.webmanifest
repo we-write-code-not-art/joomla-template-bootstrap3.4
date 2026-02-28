@@ -1,0 +1,21 @@
+{
+  "name": "Art As A Weapon",
+  "short_name": "AAAW",
+  "icons": [
+    {
+      "src": "/templates/bootstrap3.4/images/favicons/artasaweapon.com/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/templates/bootstrap3.4/images/favicons/artasaweapon.com/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#462020",
+  "background_color": "#010101",
+  "display": "standalone"
+}

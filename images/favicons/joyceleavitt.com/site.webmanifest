@@ -1,0 +1,21 @@
+{
+  "name": "Joyce Leavitt",
+  "short_name": "Joyce Leavitt",
+  "icons": [
+    {
+      "src": "/templates/bootstrap3.4/images/favicons/joyceleavitt.com/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/templates/bootstrap3.4/images/favicons/joyceleavitt.com/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#786048",
+  "background_color": "#c0a878",
+  "display": "standalone"
+}

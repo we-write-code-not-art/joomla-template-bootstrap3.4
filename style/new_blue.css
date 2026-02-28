@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Tinos');
+
+:root {
+  --serif-font-family-fallback:                    "Tinos", "Georgia", "Times New Roman", "Times", "serif";
+  --sans-serif-font-family-fallback:               "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+
+  --header-font-family:                            var(--sans-serif-font-family-fallback);
+  --text-font-family:                              var(--sans-serif-font-family-fallback);
+
+  --body-font-family:                              var(--text-font-family);
+
+  --font-size-base:                                14px;
+               
+  /* background color of the entire page */
+	--body-background:                               #ffffff;
+
+  --user-menu-text-color:                          #ffffff;
+  --user-menu-background:                          rgba(1 1 1 / 80%);
+  --user-menu-border:                              color-mix(in hsl, #010101 93.5%, black); /* color-mix(in hsl, var(--user-menu-background) 93.5%, black); */
+  --user-menu-link-color:                          var(--user-menu-text-color);
+  --user-menu-link-hover-color:                    color-mix(in hsl, var(--user-menu-text-color) 90%, black);
+  --user-menu-link-hover-background:               transparent;
+  --user-menu-link-active-color:                   color-mix(in hsl, var(--user-menu-text-color) 80%, black);
+  --user-menu-link-active-background:              transparent;
+  --user-menu-link-disabled-color:                 #777777;
+  --user-menu-link-disabled-background:            transparent;
+  --user-menu-brand-color:                         var(--user-menu-link-color);
+  --user-menu-brand-hover-color:                   color-mix(in hsl, var(--user-menu-brand-color) 90%, black);
+  --user-menu-brand-hover-background:              transparent;
+
+  /* color and border around banner, menu bar, breadcrumbs and content */
+  --body-panel-background:                         #ffffff;
+	--body-panel-border:                             color-mix(in hsl, var(--body-panel-background) 10%, black);
+  --body-panel-text-color:                         #000000;  /* not used cause it never happens */
+  --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
+
+  --banner-text-color:                             #e3e3e3;
+  --banner-background:                             #00517b;
+  --banner-border:                                 color-mix(in hsl, var(--banner-background) 93.5%, black);
+  --banner-header-color:                           #ffffff;      /* this is for the site's name if shown */
+  --banner-header-font-family:                     var(--header-font-family);
+
+  --mainmenu-text-color:                           #ffffff;  /* not used cause it never happens */
+  --mainmenu-background:                           #0073ae;
+  --mainmenu-border:                               color-mix(in hsl, var(--mainmenu-background) 93.5%, black);
+  --mainmenu-font-family:                          var(--header-font-family);
+  --mainmenu-font-size:                            var(--font-size-base);
+  --mainmenu-link-color:                           var(--mainmenu-text-color);
+  --mainmenu-link-hover-color:                     color-mix(in hsl, var(--mainmenu-link-color) 90%, black);
+  --mainmenu-link-hover-background:                transparent;
+  --mainmenu-link-active-color:                    var(--mainmenu-link-color);
+  --mainmenu-link-active-background:               color-mix(in hsl, var(--mainmenu-background) 90%, black);
+  --mainmenu-link-disabled-color:                  color-mix(in hsl, var(--mainmenu-link-hover-color) 80%, black);
+  --mainmenu-link-disabled-background:             transparent;
+  
+  /* probly not used? */
+  --mainmenu-brand-color:                          var(--mainmenu-link-color);
+  --mainmenu-brand-hover-color:                    color-mix(in hsl, var(--mainmenu-link-color) 90%, black);
+  --mainmenu-brand-hover-background:               transparent;
+
+  --dropdown-font-family:                          var(--header-font-family);
+  --dropdown-font-size:                            var(--mainmenu-font-size);
+  --dropdown-background:                           var(--mainmenu-background);
+  --dropdown-border:                               var(--mainmenu-border);
+  --dropdown-divider-background:                   var(--mainmenu-border);
+  --dropdown-link-color:                           var(--mainmenu-link-color);
+  --dropdown-link-hover-color:                     var(--mainmenu-link-hover-color);
+  --dropdown-link-hover-background:                var(--mainmenu-link-hover-background);
+  --dropdown-link-active-color:                    var(--mainmenu-link-active-color);
+  --dropdown-link-active-background:               var(--mainmenu-link-active-background);
+  --dropdown-link-disabled-color:                  var(--mainmenu-link-disabled-color);
+  --dropdown-header-font-family:                   var(--dropdown-font-family);
+  --dropdown-header-font-size:                     var(--dropdown-font-size);
+  --dropdown-header-color:                         var(--dropdown-link-color);
+
+  --xs-banner-text-color:                          var(--banner-text-color);
+  --xs-banner-background:                          var(--banner-background);
+  --xs-banner-border:                              var(--banner-border);
+  --xs-banner-header-color:                        var(--banner-header-color);
+  --xs-banner-header-font-family:                  var(--banner-header-font-family);
+
+  --xs-menu-text-color:                            var(--mainmenu-text-color);
+  --xs-menu-background:                            var(--mainmenu-background);
+  --xs-menu-header-background:                     var(--mainmenu-background);
+  --xs-menu-border:                                var(--mainmenu-border);
+  --xs-menu-link-color:                            var(--mainmenu-link-color);
+  --xs-menu-link-hover-color:                      var(--mainmenu-link-hover-color);
+  --xs-menu-link-hover-background:                 var(--mainmenu-link-hover-background);
+  --xs-menu-link-active-color:                     var(--mainmenu-link-active-color);
+  --xs-menu-link-active-background:                var(--mainmenu-link-active-background);
+  --xs-menu-link-disabled-color:                   var(--mainmenu-link-disabled-color);
+  --xs-menu-link-disabled-background:              var(--mainmenu-link-disabled-background);
+  --xs-menu-brand-color:                           var(--mainmenu-link-color);
+  --xs-menu-brand-hover-color:                     var(--mainmenu-link-hover-color);
+  --xs-menu-brand-hover-background:                var(--mainmenu-link-hover-background);
+  --xs-menu-toggle-background:                     var(--xs-menu-background);
+  --xs-menu-toggle-hover-background:               color-mix(in hsl, var(--xs-menu-toggle-background) 90%, black);
+  --xs-menu-toggle-icon-bar-background:            var(--xs-menu-text-color);
+  --xs-menu-toggle-border-color:                   var(--xs-menu-text-color);
+  --xs-menu-divider-background:                    var(--xs-menu-link-color);
+                                                                                                      
+  --breadcrumb-text-color:                         #ffffff; /* "current" location, not clickable */
+  --breadcrumb-background:                         #005288;
+  --breadcrumb-border:                             color-mix(in hsl, var(--breadcrumb-background) 93.5%, black);
+  --breadcrumb-divider:                            " · ";
+  --breadcrumb-divider-color:                      var(--breadcrumb-text-color);
+  --breadcrumb-link-color:                         #00aeef;  /* "parent" paths, clickable */
+  --breadcrumb-link-hover-color:                   var(--breadcrumb-text-color);
+
+  --main-content-text-color:                       #003b5a;
+  --main-content-background:                       #f5f5f5;
+  --main-content-border:                           #dddddd;
+  --main-content-header-color:                     #005d8d; 
+  --main-content-header-font-family:               var(--header-font-family);
+  --main-content-header-font-size-base:            var(--font-size-base);
+  --main-content-header-hover-color:               var(--main-content-header-color);
+  --main-content-header-hover-background:          transparent;
+  --main-content-divider-color:                    #e3e3e3;
+  --main-content-link-color:                       color-mix(in hsl, #428bca 93.5%, black);
+  --main-content-link-hover-color:                 color-mix(in hsl, var(--main-content-link-color) 85%, black);
+  --main-content-link-hover-background:            transparent;
+  --main-content-muted-color:                      color-mix(in hsl, #000000 53.3%, white);
+  --main-content-muted-link-color:                 var(--main-content-muted-color);
+  --main-content-muted-link-hover-color:           var(--main-content-muted-link-color);
+  --main-content-muted-link-hover-background:      transparent;
+  --main-content-icon-link-color:                  var(--main-content-link-color);
+  --main-content-icon-link-hover-color:            var(--main-content-link-hover-color);
+  --main-content-icon-link-hover-background:       transparent;
+  --main-content-panel-heading-color:              var(--main-content-header-color);
+  --main-content-panel-heading-background:         var(--main-content-bg);
+  --main-content-panel-heading-border:             var(--main-content-border);
+  --main-content-panel-body-border:                var(--main-content-border);
+  --main-content-article-image-border:             var(--main-content-border);
+  
+  --btn-default-color:                             #ffffff;
+  --btn-default-bg:                                #593906;
+  --btn-default-border:                            color-mix(in hsl, var(--btn-default-bg) 95%, black);
+  --btn-default-hover-color:                       var(--btn-default-color);
+  --btn-default-hover-bg:                          color-mix(in hsl, var(--btn-default-bg) 90%, black);
+  --btn-default-hover-border:                      color-mix(in hsl, var(--btn-default-border) 88%, black);
+
+  /* large button displayable across entire content, only visible in xs (mobile) */
+  --btn-hero-color:                                var(--mainmenu-link-active-color);
+  --btn-hero-bg:                                   var(--mainmenu-link-active-background);
+  --btn-hero-border-color:                         var(--mainmenu-link-active-color);
+  --btn-hero-hover-color:                          color-mix(in hsl, var(--mainmenu-link-color) 88%, black);
+  --btn-hero-hover-bg:                             color-mix(in hsl, var(--mainmenu-link-active-background) 88%, black);
+  --btn-hero-hover-border-color:                   color-mix(in hsl, var(--btn-hero-border-color) 88%, black);
+                                                   
+  --input-color:                                   var(--main-content-text-color);
+  --input-background:                              var(--mainmenu-link-active-background);
+  --input-border:                                  color-mix(in hsl, var(--input-color) 95%, black);
+  --input-group-addon-background:                  var(--input-background);
+  --input-group-addon-border-color:                var(--input-border);
+                                                   
+  --label-color:                                   var(--input-color);
+                                                   
+  --login-background:                              var(--main-content-background);
+
+  --menu-card-border-color:                        var(--main-content-link-color);
+  --menu-card-border-hover-color:                  var(--main-content-link-hover-color);
+
+  --table-background-accent:                       var(--body-background);
+  --table-background:                              transparent;
+  --table-caption-color:                           var(--main-content-text-color);
+  --table-caption-background:                      transparent;
+  --table-head-color:                              var(--main-content-text-color);
+  --table-head-background:                         transparent;
+  --table-border-color:                            #dddddd;   /* @btn-default-border; */
+  --table-hover-background:                        color-mix(in hsl, var(--table-background-accent) 88%, white);
+
+  --pager-background:                              #593906;
+  --pager-border:                                  color-mix(in hsl, var(--input-background) 95%, black);
+  --pager-link-color:                              #BE9A54;
+  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-text-color) 85%, black);
+  --pager-link-hover-background:                   #593906;
+  --pager-link-hover-border:                       #BE9A54;
+  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-text-color) 80%, white);
+ 
+  --sidebar-left-color:                            var(--main-content-text-color);
+  --sidebar-left-background:                       var(--main-content-background);
+  --sidebar-left-border:                           var(--main-content-border);
+  --sidebar-left-header-color:                     var(--main-content-header-color);
+  --sidebar-left-header-font-family:               var(--header-font-family);
+  --sidebar-left-header-font-size-base:            calc(var(--font-size-base) * 2);
+  --sidebar-left-divider-color:                    var(--main-content-divider-color);
+  --sidebar-left-link-color:                       var(--main-content-link-color);
+  --sidebar-left-link-hover-color:                 var(--main-content-link-hover-color);
+  --sidebar-left-link-hover-background:            var(--main-content-link-hover-background);
+  --sidebar-left-navbar-link-color:                var(--sidebar-left-link-color);
+  --sidebar-left-navbar-link-hover-color:          var(--sidebar-left-link-hover-color);
+  --sidebar-left-navbar-link-hover-background:     var(--sidebar-left-link-hover-background);
+  --sidebar-left-navbar-link-active-color:         var(--mainmenu-link-active-color);
+  --sidebar-left-navbar-link-active-background:    var(--mainmenu-link-active-background);
+  --sidebar-left-navbar-link-disabled-color:       var(--mainmenu-link-disabled-color);
+  --sidebar-left-navbar-link-disabled-background:  var(--mainmenu-link-disabled-background); 
+
+  --sidebar-right-color:                           var(--main-content-color);
+  --sidebar-right-background:                      var(--main-content-background);
+  --sidebar-right-border:                          var(--main-content-border);
+  --sidebar-right-header-color:                    var(--main-content-header-color);
+  --sidebar-right-header-font:                     var(--header-font-family);
+  --sidebar-right-header-font-size-base:           calc(var(--font-size-base) * 2);
+  --sidebar-right-divider-color:                   var(--main-content-divider-color);
+  --sidebar-right-link-color:                      var(--main-content-link-color);
+  --sidebar-right-link-hover-color:                var(--main-content-link-hover-color);
+  --sidebar-right-link-hover-background:           var(--main-content-link-hover-background);
+  --sidebar-right-navbar-link-color:               var(--sidebar-right-link-color);
+  --sidebar-right-navbar-link-hover-color:         var(--sidebar-right-link-hover-color);
+  --sidebar-right-navbar-link-hover-background:    var(--sidebar-right-link-hover-background);
+  --sidebar-right-navbar-link-active-color:        var(--mainmenu-link-active-color);
+  --sidebar-right-navbar-link-active-background:   var(--mainmenu-link-active-background);
+  --sidebar-right-navbar-link-disabled-color:      var(--mainmenu-link-disabled-color);
+  --sidebar-right-navbar-link-disabled-background: var(--mainmenu-link-disabled-background);
+
+  --footer-outer-background:                       transparent;
+  --footer-outer-border:                           transparent;
+  --footer-inner-background:                       transparent;
+  --footer-inner-border:                           transaparent;
+  --footer-text-color:                             var(--main-content-text-color);
+  --footer-link-color:                             var(--main-content-link-color);
+  --footer-link-hover-color:                       var(--main-content-link-hover-color);
+  --footer-link-hover-background:                  var(--main-content-link-hover-background);
+  --footer-header-color:                           var(--main-content-header-color);
+
+  --footer-back-top-text-color:                    var(--footer-text-color);
+  --footer-back-top-background:                    var(--footer-outer-background);
+  --footer-back-top-link-color:                    var(--footer-link-color);
+  --footer-back-top-link-hover-color:              var(--footer-link-hover-color);
+  --footer-back-top-link-hover-background:         var(--footer-link-hover-background);
+
+  --footer-thumbnail-caption-color:                var(--footer-link-color);
+  --footer-thumbnail-background:                   var(--main-content-background);
+  --footer-thumbnail-border:                       color-mix(in hsl, var(--footer-thumbnail-background) 93.5%, black);
+
+  --footer-xs-outer-background:                    var(--footer-outer-background);
+  --footer-xs-outer-border:                        var(--footer-outer-border);
+  --footer-xs-inner-background:                    var(--footer-inner-background);
+  --footer-xs-inner-border:                        var(--footer-inner-border);
+                                                   
+  --footer-xs-text-color:                          var(--footer-text-color);
+  --footer-xs-link-color:                          var(--footer-link-color);
+  --footer-xs-link-hover-color:                    var(--footer-link-hover-color);
+  --footer-xs-link-hover-background:               var(--footer-link-hover-background);
+  --footer-xs-header-color:                        var(--footer-header-color);
+                                                   
+  --footer-xs-back-top-color:                      var(--footer-xs-text-color);
+  --footer-xs-back-top-background:                 var(--footer-xs-outer-background);
+  --footer-xs-back-top-link-color:                 var(--footer-xs-link-color);
+  --footer-xs-back-top-link-hover-color:           var(--footer-xs-link-hover-color);
+  --footer-xs-back-top-link-hover-background:      var(--footer-xs-link-hover-background);
+                                                   
+  --footer-xs-thumbnail-border:                    var(--footer-thumbnail-border);
+  --footer-xs-thumbnail-caption-color:             var(--footer-thumbnail-caption-color);
+  --footer-xs-thumbnail-background:                var(--footer-thumbnail-background);
+
+  --debug-caption-color:                           var(--footer-header-color);
+
+  
+}
