@@ -173,10 +173,10 @@
   --pager-background:                              #593906;
   --pager-border:                                  color-mix(in hsl, var(--input-background) 95%, black);
   --pager-link-color:                              #BE9A54;
-  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-text-color) 85%, black);
+  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-link-color) 85%, black);
   --pager-link-hover-background:                   #593906;
   --pager-link-hover-border:                       #BE9A54;
-  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-text-color) 80%, white);
+  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-link-color) 80%, white);
  
   --sidebar-left-color:                            var(--main-content-text-color);
   --sidebar-left-background:                       var(--main-content-background);

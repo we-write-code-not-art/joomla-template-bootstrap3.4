@@ -5,7 +5,7 @@ $bannerIsFluid = $params->get('fluidBanner');
 
 if($this->error) {
   $bannerSizeType = $this->params->get('errorBannerSizeType');
-  $bannerSizeValue = ($bannerSizeType=="fixed")?$this->params->get('errorBannerSizeValue'):"";
+  $bannerSizeValue = ($bannerSizeType=="fixed")?$this->params->get('errorBannerSizeValue'):0;
 
   $bannerParallaxImage = $this->params->get('errorBannerParallaxImage')==""?"":(Uri::root().$this->params->get('errorBannerParallaxImage'));
   $bannerBackgroundImage = $this->params->get('errorBannerBackgroundImage')==""?"":(Uri::root().$this->params->get('errorBannerBackgroundImage'));
@@ -30,7 +30,7 @@ if($this->error) {
   $bannerBackgroundImageSizeInner=$bannerBackgroundImageSizeType=="value"?($this->params->get('errorBannerBackgroundImageSizeValue')-62).'px':'';
 } else {
   $bannerSizeType = $this->params->get('bannerSizeType');
-  $bannerSizeValue = ($bannerSizeType=="fixed")?$this->params->get('bannerSizeValue'):"";
+  $bannerSizeValue = ($bannerSizeType=="fixed")?$this->params->get('bannerSizeValue'):0;
 
   $bannerParallaxImage = $this->params->get('bannerParallaxImage')==""?"":(Uri::root().$this->params->get('bannerParallaxImage'));
   $bannerBackgroundImage = $this->params->get('bannerBackgroundImage')==""?"":(Uri::root().$this->params->get('bannerBackgroundImage'));

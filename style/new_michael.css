@@ -1,20 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Tinos');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-/* convenience colors */
-:root {
-  --transparent-black:   rgba(0 0 0 / 75%);
-  --transparent-grey:    rgba(48 48 48 / 75%);
-  --transparent-orange:    rgba(248 161 32 / 30%);
-  /*--custom-red:          #8e4141;*/
-  --custom-yellow:       #ffe1ae;
-  --darkened-yellow:     #ffcc73;
-  --custom-orange:       #995c01;
-/*  --darkened-red:        color-mix(in srgb, #8e4141 70.5%, black);
-  --darkest-red:         color-mix(in srgb, #8e4141 26%, black);*/
-}
 
 :root {
+  /* convenience colors */
+  --transparent-black:   rgba(0 0 0 / 75%);
+  --transparent-orange:    rgba(153 92 1 / 30%);
+
+  --custom-yellow:       #ffe1ae;
+  --darkened-yellow:     #ffcc73;
+  --custom-orange:       #ff9900;
+  --darkened-orange:     #995c01;
+
+  /* darken and lighten default values */
+  --border-darken:     93.5%;
+  --hover-color:       88%;
+  --hover-background:  90%;
+  --hover-border:      88%;
+
   --serif-font-family-fallback:                    "Playfair Display", "Georgia", "Times New Roman", "Times", "serif";
   --sans-serif-font-family-fallback:               "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 
@@ -27,7 +32,9 @@
                
   /* background color of the entire page */
 	--body-background:                               #010101;
+  --body-font-family:                              var(--text-font-family);
 
+  /* user profile bar fixed to the top */
   --user-menu-text-color:                          var(--custom-yellow);
   --user-menu-background:                          rgba(248 161 32 / 80%);
   --user-menu-border:                              color-mix(in hsl, var(--custom-orange) 93.5%, black); /* color-mix(in hsl, var(--user-menu-background) 93.5%, black); */
@@ -53,21 +60,21 @@
   --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
 
   --banner-text-color:                             #ffffff;
-  --banner-background:                             var(--transparent-black);
-  --banner-border:                                 color-mix(in hsl, var(--banner-background) 93.5%, black);
+  --banner-background:                             transparent;
+  --banner-border:                                 transparent;
   --banner-header-color:                           var(--custom-yellow);      /* this is for the site's name if shown */
   --banner-header-font-family:                     var(--header-font-family);
 
-  --mainmenu-text-color:                           var(--custom-orange);  /* not used cause it never happens */
-  --mainmenu-background:                           rgba(0 0 0 / 75%);
-  --mainmenu-border:                               color-mix(in hsl, var(--mainmenu-background) 93.5%, black);
+  --mainmenu-text-color:                           var(--darkened-orange);
+  --mainmenu-background:                           var(--transparent-black);
+  --mainmenu-border:                               color-mix(in hsl, var(--mainmenu-background) var(--border-darken), black);
   --mainmenu-font-family:                          var(--header-font-family);
   --mainmenu-font-size:                            calc(var(--font-size-base) * 2);
   --mainmenu-link-color:                           var(--mainmenu-text-color);
   --mainmenu-link-hover-color:                     var(--custom-yellow);
   --mainmenu-link-hover-background:                transparent;
   --mainmenu-link-active-color:                    var(--mainmenu-link-hover-color);
-  --mainmenu-link-active-background:               var(--custom-orange);
+  --mainmenu-link-active-background:               var(--darkened-orange);
   --mainmenu-link-disabled-color:                  color-mix(in hsl, var(--mainmenu-link-hover-color) 80%, black);
   --mainmenu-link-disabled-background:             transparent;
   
@@ -93,15 +100,15 @@
 
   --xs-banner-text-color:                          var(--banner-text-color);
   --xs-banner-background:                          var(--banner-background);
-  --xs-banner-border:                              var(--banner-border);
+  --xs-banner-border:                              #333333; /* var(--banner-border); */
   --xs-banner-header-color:                        var(--banner-header-color);
   --xs-banner-header-font-family:                  var(--banner-header-font-family);
 
   --xs-menu-text-color:                            var(--custom-orange);
   --xs-menu-background:                            #010101; /*var(--mainmenu-background);*/
   --xs-menu-header-background:                     var(--mainmenu-background);
-  --xs-menu-border:                                color-mix(in hsl, var(--xs-menu-background) 93.5%, black);
-  --xs-menu-link-color:                            var(--mainmenu-link-color);
+  --xs-menu-border:                                #333333; /*color-mix(in hsl, var(--xs-menu-background) var(--border-darken), black);*/
+  --xs-menu-link-color:                            var(--custom-yellow);
   --xs-menu-link-hover-color:                      var(--mainmenu-link-active-color);
   --xs-menu-link-hover-background:                 var(--mainmenu-link-active-background);
   --xs-menu-link-active-color:                     var(--mainmenu-link-active-color);
@@ -109,17 +116,19 @@
   --xs-menu-link-disabled-color:                   var(--mainmenu-link-disabled-color);
   --xs-menu-link-disabled-background:              var(--mainmenu-link-disabled-background);
   --xs-menu-brand-color:                           var(--custom-yellow);
-  --xs-menu-brand-hover-color:                     var(--mainmenu-link-hover-color);
+  --xs-menu-brand-border-color:                    transparent;
+  --xs-menu-brand-hover-color:                     var(--darkened-yellow);
   --xs-menu-brand-hover-background:                var(--mainmenu-link-hover-background);
-  --xs-menu-toggle-background:                     var(--xs-menu-header-background);
+  --xs-menu-toggle-background:                     color-mix(in srgb, var(--xs-menu-text-color) 70%, black); /*var(--xs-menu-header-background);*/
   --xs-menu-toggle-hover-background:               color-mix(in hsl, var(--xs-menu-toggle-background) 90%, black);
   --xs-menu-toggle-icon-bar-background:            var(--custom-yellow); /*var(--xs-menu-text-color);*/
   --xs-menu-toggle-border-color:                   var(--xs-menu-text-color);
-  --xs-menu-divider-background:                    var(--xs-menu-link-color);
-                                                                                                      
-  --breadcrumb-text-color:                         #e3e3e3; /* "current" location, not clickable */
-  --breadcrumb-background:                         rgba(0 0 0 / 75%);
-  --breadcrumb-border:                             color-mix(in hsl, var(--breadcrumb-background) 93.5%, black);
+  --xs-menu-divider-background:                    #333333;
+  --xs-menu-avatar-border-color:                   var(--dropdown-divider-background);
+
+  --breadcrumb-text-color:                         #ffffff; /* "current" location, not clickable */
+  --breadcrumb-background:                         transaparent;
+  --breadcrumb-border:                             transaparent;
   --breadcrumb-divider:                            " · ";
   --breadcrumb-divider-color:                      var(--breadcrumb-text-color);
   --breadcrumb-link-color:                         var(--custom-yellow);  /* "parent" paths, clickable */
@@ -187,13 +196,14 @@
   --table-border-color:                            var(--custom-yellow);   /* @btn-default-border; */
   --table-hover-background:                        color-mix(in hsl, var(--table-background-accent) 88%, white);
 
+/* not currently used */
   --pager-background:                              #593906;
   --pager-border:                                  color-mix(in hsl, var(--input-background) 95%, black);
   --pager-link-color:                              #BE9A54;
-  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-text-color) 85%, black);
+  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-link-color) 85%, black);
   --pager-link-hover-background:                   #593906;
   --pager-link-hover-border:                       #BE9A54;
-  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-text-color) 80%, white);
+  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-link-color) 80%, white);
  
   --sidebar-left-color:                            var(--main-content-text-color);
   --sidebar-left-background:                       var(--main-content-background);
@@ -234,12 +244,18 @@
   --footer-outer-background:                       transparent;
   --footer-outer-border:                           transparent;
   --footer-inner-background:                       var(--transparent-black); /* transparent; */
-  --footer-inner-border:                           var(--transparent-grey); /* transaparent; */
+  --footer-inner-border:                           transaparent;
+
   --footer-text-color:                             var(--custom-yellow); /* var(--main-content-text-color); */
-  --footer-link-color:                             var(--custom-yellow); /* var(--main-content-link-color); */
+  --footer-link-color:                             var(--darkened-orange); /* var(--main-content-link-color); */
   --footer-link-hover-color:                       var(--footer-link-color);
-  --footer-link-hover-background:                  var(--transparent-orange); /* var(--footer-link-background); */
+  --footer-link-hover-background:                  var(--custom-yellow); /* var(--footer-link-background); */
   --footer-header-color:                           var(--main-content-header-color);
+
+  --social-badges-color:                           var(--custom-yellow);
+  --social-badges-background:                      transparent;
+  --social-badges-hover-color:                     var(--custom-yellow);
+  --social-badges-hover-background:                var(--transparent-orange);
 
   --footer-back-top-text-color:                    var(--footer-text-color);
   --footer-back-top-background:                    var(--footer-outer-background);
@@ -249,7 +265,7 @@
 
   --footer-thumbnail-caption-color:                var(--footer-link-color);
   --footer-thumbnail-background:                   var(--main-content-background);
-  --footer-thumbnail-border:                       var(--custom-orange); /*color-mix(in hsl, var(--footer-thumbnail-background) 93.5%, black);*/
+  --footer-thumbnail-border:                       transparent; /*color-mix(in hsl, var(--footer-thumbnail-background) var(--border-darken), black);*/
 
   --footer-xs-outer-background:                    var(--footer-outer-background);
   --footer-xs-outer-border:                        var(--footer-outer-border);

@@ -9,7 +9,7 @@
 	<copyright>Copyright(C)2016 Michael E Allen. All rights reserved.</copyright>
 	<description>Basic Bootstrap 3.4 enabled template</description>
     <updateservers>
-      <server type="extension" name="mod_socialbadges" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
+      <server type="extension" name="Boostrap3.4" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
     </updateservers>
 	<files>
 	</files>

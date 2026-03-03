@@ -256,7 +256,7 @@ $errorCode = $this->error->getCode();
 	<script src="<?php echo $templatePath; ?>/js/jquery.parallax.min.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<?php include "css.php"; ?>
+<?php include_once "css.php"; ?>
 
 	<!--[if lt IE 9]>
 		<script src="<?php echo Uri::root(true); ?>/media/jui/js/html5.js"></script>

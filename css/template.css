@@ -7093,6 +7093,9 @@ fieldset[disabled] .form-control {
 label {
   color: var(--label-color);
 }
+.form-horizontal .control-label {
+  text-align: right;
+}
 a.label:hover,
 a.label:focus {
   color: #ffffff;
@@ -7650,8 +7653,8 @@ fieldset[disabled] .navbar-user .btn-link:focus {
   font-family: var(--xs-banner-header-font-family);
 }
 .banner-xs .panel {
-  color: var(--xs-banner-color);
-  border: 1px var(--xs-banner-border);
+  color: var(--xs-banner-text-color);
+  border: 1px solid var(--xs-banner-border);
   background-color: var(--xs-banner-background);
   margin-bottom: 0px;
 }
@@ -7926,7 +7929,7 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
   padding-top: 3px;
 }
 .navbar-xsmenu-logo img {
-  border: 1px solid var(--xs-menu-border);
+  border: 1px solid var(--xs-menu-brand-border-color);
   width: 44px;
   height: 44px;
   -webkit-border-radius: 4px;
@@ -7938,7 +7941,7 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
   background: transparent;
 }
 .navbar-xsmenu-avatar img {
-  border: 1px solid var(--xs-menu-border);
+  border: 1px solid var(--xs-menu-avatar-border-color);
   width: 44px;
   height: 44px;
   -webkit-border-radius: 4px;
@@ -8787,6 +8790,17 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
 #sbox-window {
   background-color: #fdc92d !important;
   /*Border Color*/
+}
+.footer-inner .mod-socialbadges li a {
+  color: var(--social-badges-color);
+}
+.footer-inner .mod-socialbadges li a:hover,
+.footer-inner .mod-socialbadges li a:focus {
+  color: var(--social-badges-hover-color);
+  background: var(--social-badges-hover-background);
+}
+.footer-inner .mod-socialbadges li a {
+  background: var(--social-badges-background);
 }
 .sidebar .navbar-nav > li a {
   padding-top: 8px;
