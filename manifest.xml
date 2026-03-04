@@ -15,7 +15,7 @@
 		<maintainer>Michael E Allen</maintainer>
 		<maintainerurl>https://we-write-code-not-art.com</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version="6.0"/>
+		<targetplatform name="joomla" version="6\.[0-9]"/>
 		<client>site</client>
 	</update>
 </updates>
