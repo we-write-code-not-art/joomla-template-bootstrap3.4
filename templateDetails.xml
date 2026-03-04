@@ -9,9 +9,30 @@
 	<copyright>Copyright(C)2016 Michael E Allen. All rights reserved.</copyright>
 	<description>Basic Bootstrap 3.4 enabled template</description>
     <updateservers>
-      <server type="extension" name="Boostrap3.4" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
+      <server type="extension" name="bootstrap3.4" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
     </updateservers>
 	<files>
+		<filename>component.php</filename>
+		<filename>config.php</filename>
+		<filename>css.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>joomla.asset.json</filename>
+		<filename>LICENSE</filename>
+		<filename>manifest.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>build</folder>
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>models</folder>
+		<folder>site</folder>
+		<folder>style</folder>
 	</files>
 	<positions>
 		<position>menu-collapsed</position>

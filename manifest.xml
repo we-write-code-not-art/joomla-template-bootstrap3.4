@@ -1,6 +1,6 @@
 <updates>
 	<update>
-		<name>bootstrap3.4</name>
+		<name>Bootstrap3.4</name>
 		<description>Basic Bootstrap 3.4 enabled template</description>
 		<element>bootstrap3.4</element>
 		<type>module</type>
