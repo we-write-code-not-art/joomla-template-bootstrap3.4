@@ -1,9 +1,9 @@
 <updates>
 	<update>
-		<name>Bootstrap3.4</name>
+		<name>bootstrap3.4</name>
 		<description>Basic Bootstrap 3.4 enabled template</description>
 		<element>bootstrap3.4</element>
-		<type>module</type>
+		<type>template</type>
 		<version>6.0.1</version>
 		<infourl title="Boostrap3.4 6.0.1">https://www.we-write-code-not-art.com/</infourl>
 		<downloads>
