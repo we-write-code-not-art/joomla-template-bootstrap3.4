@@ -66,7 +66,7 @@ $faviconPath=$templatePath . '/images/favicons/'.$faviconDir;
 HTMLHelper::_('script', 'jquery.min.js', ['version' => 'auto', 'relative' => true]);
 HTMLHelper::_('script', 'bootstrap.min.js', ['version' => 'auto', 'relative' => true]);
 // Add Stylesheets
-$doc->addStyleSheet($templatePath . '/style/base.css');
+$doc->addStyleSheet($templatePath . '/css/template.css');
 $doc->addStyleSheet($templatePath . '/style/'.$cssFile);
 
 // Load optional RTL Bootstrap CSS

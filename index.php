@@ -66,7 +66,6 @@ $cssFile = $this->params->get('cssFile');
 $faviconDir = $this->params->get('faviconDir');
 $faviconPath=$templatePath . '/images/favicons/'.$faviconDir;
 
-
 // Add JavaScript Frameworks
 //HTMLHelper::_('jquery.framework');
 //HTMLHelper::_('bootstrap.framework');
