@@ -6811,7 +6811,7 @@ ol.inline > li {
   padding-left: 5px;
   padding-right: 5px;
 }
-a[target="_blank"]::after {
+a[target="_blank"]:not(.thumbnail)::after {
   content: "\f35d";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
