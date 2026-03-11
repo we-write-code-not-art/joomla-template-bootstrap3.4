@@ -157,7 +157,7 @@ if($bannerBackgroundImage!='') {
 	.banner .panel .overlay {
 		z-index: 200;
 		float: right;
-		position: absolute;
+		/*position: absolute;*/
 		width: 100%;
 		height: 100%;
 		background-image: url(<?php echo $bannerBackgroundImage; ?>);
