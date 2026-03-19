@@ -52,6 +52,7 @@
   /* color and border around banner, menu bar, breadcrumbs and content */
   --body-panel-background:                         transparent;
 	--body-panel-border:                             transparent;
+  --body-panel-box-shadow:                         transparent; /*0 1px 1px rgba(0,0,0,.05);*/
   --body-panel-text-color:                         #786048;  /* not used cause it never happens */
   --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
 
@@ -122,17 +123,18 @@
   --xs-menu-divider-background:                    var(--xs-menu-link-color);
   --xs-menu-avatar-border-color:                   transparent;
 
-  --breadcrumb-text-color:                         #ffffff; /* "current" location, not clickable */
+  --breadcrumb-text-color:                         #521384; /* "current" location, not clickable */
   --breadcrumb-background:                         #ed145b;
   --breadcrumb-border:                             color-mix(in hsl, var(--breadcrumb-background) var(--border-darken), black);
   --breadcrumb-divider:                            " · ";
-  --breadcrumb-divider-color:                      var(--breadcrumb-text-color);
-  --breadcrumb-link-color:                         var(--breadcrumb-text-color);
+  --breadcrumb-divider-color:                      #ffffff; /*var(--breadcrumb-text-color);*/
+  --breadcrumb-link-color:                         #ffffff; /*var(--breadcrumb-text-color);*/
   --breadcrumb-link-hover-color:                   color-mix(in hsl, var(--breadcrumb-link-color) var(--hover-color), black);
 
   --main-content-text-color:                       #252525;
   --main-content-background:                       #ffffff;
   --main-content-border:                           transparent;
+  --main-content-box-shadow:                       var(--body-panel-box-shadow);
   --main-content-header-color:                     #521384;
   --main-content-header-font-family:               var(--header-font-family);
   --main-content-header-font-size-base:            var(--font-size-base);
@@ -173,6 +175,7 @@
   --input-color:                                   #521384;
   --input-background:                              rgba(82 19 132 / 20%);
   --input-border:                                  color-mix(in hsl, var(--input-background) var(--hover-border), black);
+  --input-placeholder-color:                       color-mix(in hsl, var(--input-background) 80%, white);
   --input-group-addon-background:                  var(--input-background);
   --input-group-addon-border-color:                var(--input-border);
                                                    
@@ -263,11 +266,6 @@
   --footer-thumbnail-background:                   var(--main-content-background);
   --footer-thumbnail-border:                       color-mix(in hsl, var(--footer-thumbnail-background) var(--border-darken), black);
 
-/*@thumbnail-caption-color: #786048;
-@thumbnail-border: #C0A878;
-//@thumbnail-bg: @black-30;
-*/
-
   --footer-xs-outer-background:                    var(--footer-outer-background);
   --footer-xs-outer-border:                        var(--footer-outer-border);
   --footer-xs-inner-background:                    var(--footer-inner-background);
@@ -290,4 +288,8 @@
   --footer-xs-thumbnail-background:                var(--footer-thumbnail-background);
 
   --debug-caption-color:                           var(--footer-header-color); 
+}
+
+.banner .panel .overlay {
+  position: relative;
 }

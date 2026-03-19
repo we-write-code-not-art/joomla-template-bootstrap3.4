@@ -56,6 +56,7 @@
   /* color and border around banner, menu bar, breadcrumbs and content */
   --body-panel-background:                         transparent;
 	--body-panel-border:                             transparent;
+  --body-panel-box-shadow:                         transparent; /*0 1px 1px rgba(0,0,0,.05);*/
   --body-panel-text-color:                         #ffffff;  /* not used cause it never happens */
   --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
 
@@ -68,6 +69,7 @@
   --mainmenu-text-color:                           var(--darkened-orange);
   --mainmenu-background:                           var(--transparent-black);
   --mainmenu-border:                               color-mix(in hsl, var(--mainmenu-background) var(--border-darken), black);
+  --main-content-box-shadow:                       var(--body-panel-box-shadow);
   --mainmenu-font-family:                          var(--header-font-family);
   --mainmenu-font-size:                            calc(var(--font-size-base) * 2);
   --mainmenu-link-color:                           var(--mainmenu-text-color);
@@ -177,6 +179,7 @@
   --input-color:                                   var(--custom-yellow);
   --input-background:                              var(--mainmenu-link-active-background);
   --input-border:                                  var(--custom-yellow);
+  --input-placeholder-color:                       color-mix(in hsl, var(--input-background) 80%, white);
   --input-group-addon-background:                  var(--input-background);
   --input-group-addon-border-color:                var(--input-border);
                                                    

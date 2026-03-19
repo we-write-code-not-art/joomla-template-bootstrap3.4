@@ -6456,7 +6456,13 @@ button.close {
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+.row:before,
+.row:after,
+.body-panel > .row:before,
+.body-panel > .row:after,
+.content-pane > .row:before,
+.content-pane > .row:after {
   content: " ";
   display: table;
 }
@@ -6475,7 +6481,10 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-header:after,
-.modal-footer:after {
+.modal-footer:after,
+.row:after,
+.body-panel > .row:after,
+.content-pane > .row:after {
   clear: both;
 }
 .center-block {
@@ -6781,6 +6790,8 @@ body a:focus {
   background-color: var(--body-panel-background);
   border-color: var(--body-panel-border);
   padding-top: 15px;
+  -webkit-box-shadow: var(--body-panel-box-shadow);
+  box-shadow: var(--body-panel-box-shadow);
 }
 .body-panel > .panel-heading {
   color: var(--body-panel-text-color);
@@ -6799,6 +6810,15 @@ body a:focus {
 }
 .banner ~ .body-panel {
   padding-top: 0px;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.body-panel > .row,
+.content-pane > .row {
+  margin-left: -15px;
+  margin-right: -15px;
 }
 ul.inline,
 ol.inline {
@@ -7107,6 +7127,16 @@ output {
   background-color: var(--input-background);
   border: 1px solid var(--input-border);
   border-radius: 4px;
+}
+.form-control::-moz-placeholder {
+  color: var(--input-placeholder-color);
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: var(--input-placeholder-color);
+}
+.form-control::-webkit-input-placeholder {
+  color: var(--input-placeholder-color);
 }
 .form-control[disabled],
 .form-control[readonly],
@@ -7584,6 +7614,8 @@ fieldset[disabled] .btn-danger.active {
 .navbar-user .navbar-nav > li > a:has(img) {
   padding-top: 2px;
   padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .navbar-user .navbar-nav > li > a:has(img):hover img,
 .navbar-user .navbar-nav > li > a:has(img):focus img {
@@ -8036,6 +8068,8 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
 .main-content .panel {
   background: var(--main-content-background);
   border: 1px solid var(--main-content-border);
+  -webkit-box-shadow: var(--main-content-box-shadow);
+  box-shadow: var(--main-content-box-shadow);
 }
 .main-content .panel-body {
   padding: 19px;
@@ -8198,9 +8232,11 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
 .boxed .blog-item {
   box-shadow: 0 0 2px #333942 1a, 0 2px 5px #333942 14, 0 5px 15px #333942 14, inset 0 3px 0 var(--cassiopeia-color-primary);
 }
+/* seems like this is no longer needed?
 .blog-item .page-header {
-  padding-left: 110px;
+    padding-left: 110px;
 }
+*/
 .blog-item img {
   border: 1px solid white;
 }
@@ -8209,6 +8245,29 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
 }
 .boxed .blog-item .item-content {
   padding: 25px;
+}
+.blog-items[class^="masonry-"],
+.blog-items[class*=" masonry-"] {
+  column-gap: 1em;
+  display: block;
+}
+.blog-items[class^="masonry-"] .blog-item,
+.blog-items[class*=" masonry-"] .blog-item {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 1em;
+  display: inline-flex;
+}
+@media (min-width: 992px) {
+  .blog-items.masonry-2 {
+    column-count: 2;
+  }
+  .blog-items.masonry-3 {
+    column-count: 3;
+  }
+  .blog-items.masonry-4 {
+    column-count: 4;
+  }
 }
 .thumbnail {
   background-color: var(--thumbnail-background);

@@ -1,27 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Tinos');
 
-/* convenience colors */
 :root {
-  --transparent-black:   rgba(0 0 0 / 75%);
-  --transparent-grey:    rgba(48 48 48 / 75%);
-  --transparent-red:     rgba(142  65  65 / 30%);
-  --custom-red:          #8e4141;
-  --custom-yellow:       #fdc92d;
-  --darkened-red:        color-mix(in srgb, #8e4141 70.5%, black);
-  --darkest-red:         color-mix(in srgb, #8e4141 26%, black);
-}
+  /* convenience colors */
+  /* none */
 
-/* darken and lighten default values */
-:root {
+  /* darken and lighten default values */
   --border-darken:     93.5%;
   --hover-color:       88%;
   --hover-background:  90%;
   --hover-border:      88%;
-}
 
-/* font family defaults */
-:root {
+  /* font family defaults */
   --serif-font-family-fallback:                    "Tinos", "Georgia", "Times New Roman", "Times", "serif";
   --sans-serif-font-family-fallback:               "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 
@@ -29,16 +19,15 @@
   --text-font-family:                              var(--sans-serif-font-family-fallback);
 
   --font-size-base:                                14px;
-}
 
-:root {
   /* background color of the entire page */
 	--body-background:                               #F0D8D8;
   --body-font-family:                              var(--text-font-family);
 
-  --user-menu-text-color:                          var(--custom-yellow);
-  --user-menu-background:                          rgba(142  65  65 / 80%);
-  --user-menu-border:                              color-mix(in hsl, var(--custom-red) var(--border-darken), black); /* color-mix(in hsl, var(--user-menu-background) var(--border-darken), black); */
+  /* user profile bar fixed to the top */
+  --user-menu-text-color:                          #FFA621;
+  --user-menu-background:                          rgba(234 78 50 / 80%);
+  --user-menu-border:                              color-mix(in hsl, var(--user-menu-background) var(--border-darken), black); /* color-mix(in hsl, var(--user-menu-background) var(--border-darken), black); */
   --user-menu-link-color:                          var(--user-menu-text-color);
   --user-menu-link-hover-color:                    color-mix(in hsl, var(--user-menu-text-color) var(--hover-color), black);
   --user-menu-link-hover-background:               transparent;
@@ -55,8 +44,9 @@
   --user-menu-image-border-hover-color:            #ffcc73;
 
   /* color and border around banner, menu bar, breadcrumbs and content */
-  --body-panel-background:                         #F7E6E1;
+  --body-panel-background:                         #ffa621; /*F7E6E1*/
 	--body-panel-border:                             #C0A878;
+  --body-panel-box-shadow:                         0 1px 1px rgba(0,0,0,.05);
   --body-panel-text-color:                         #786048;  /* not used cause it never happens */
   --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
 
@@ -66,7 +56,7 @@
   --banner-header-color:                           #FFA621;      /* this is for the site's name if shown */
   --banner-header-font-family:                     var(--header-font-family);
 
-  --mainmenu-text-color:                           #F0D8D8;
+  --mainmenu-text-color:                           #402a08;
   --mainmenu-background:                           #EA4E32;
   --mainmenu-border:                               color-mix(in hsl, var(--mainmenu-background) var(--border-darken), black);
   --mainmenu-font-family:                          var(--header-font-family);
@@ -128,7 +118,7 @@
   --xs-menu-avatar-border-color:                   transparent;
 
   --breadcrumb-text-color:                         #893D1B; /* "current" location, not clickable */
-  --breadcrumb-background:                         rgba(135,194,203,0.25);
+  --breadcrumb-background:                         #dbdddb;
   --breadcrumb-border:                             #87C2CB; /* color-mix(in hsl, var(--breadcrumb-background) var(--border-darken), black); */
   --breadcrumb-divider:                            " · ";
   --breadcrumb-divider-color:                      var(--breadcrumb-text-color);
@@ -136,17 +126,18 @@
   --breadcrumb-link-hover-color:                   #EA4E32;
 
   --main-content-text-color:                       #e3e3e3;
-  --main-content-background:                       var(--transparent-black);
-  --main-content-border:                           var(--transparent-grey);
-  --main-content-header-color:                     var(--custom-yellow);
+  --main-content-background:                       #402a08;
+  --main-content-border:                           color-mix(in hsl, var(--main-content-background) var(--border-darken), black);
+  --main-content-box-shadow:                       var(--body-panel-box-shadow);
+  --main-content-header-color:                     #FFA621;
   --main-content-header-font-family:               var(--header-font-family);
   --main-content-header-font-size-base:            var(--font-size-base);
   --main-content-header-hover-color:               var(--main-content-header-color);
   --main-content-header-hover-background:          transparent;
-  --main-content-divider-color:                    var(--custom-yellow);
-  --main-content-link-color:                       var(--custom-red);
-  --main-content-link-hover-color:                 color-mix(in hsl, var(--main-content-link-color) var(--hover-color), black); /* 85% */
-  --main-content-link-hover-background:            transparent;
+  --main-content-divider-color:                    #87C2CB;
+  --main-content-link-color:                       #EA4E32;
+  --main-content-link-hover-color:                 var(--main-content-link-color); /*color-mix(in hsl, var(--main-content-link-color) var(--hover-color), black);*/ /* 85% */
+  --main-content-link-hover-background:            #fdc92d;
   --main-content-muted-color:                      color-mix(in hsl, #000000 53.3%, white);
   --main-content-muted-link-color:                 var(--main-content-muted-color);
   --main-content-muted-link-hover-color:           var(--main-content-muted-link-color);
@@ -160,41 +151,42 @@
   --main-content-panel-body-border:                var(--main-content-border);
   --main-content-article-image-border:             var(--main-content-border);
   
-  --btn-default-color:                             var(--custom-yellow);
-  --btn-default-bg:                                var(--custom-red);
-  --btn-default-border:                            var(--custom-yellow);
+  --btn-default-color:                             #fdc92d;
+  --btn-default-bg:                                #EA4E32;
+  --btn-default-border:                            #fdc92d;
   --btn-default-hover-color:                       var(--btn-default-color);
   --btn-default-hover-bg:                          color-mix(in hsl, var(--btn-default-bg) var(--hover-background), black);
   --btn-default-hover-border:                      color-mix(in hsl, var(--btn-default-border) var(--hover-border), black);
 
   /* large button displayable across entire content, only visible in xs (mobile) */
-  --btn-hero-color:                                var(--custom-yellow);
+  --btn-hero-color:                                #fdc92d;
   --btn-hero-bg:                                   var(--xs-menu-toggle-background);
-  --btn-hero-border-color:                         var(--xs-menu-toggle-icon-bar-background);
+  --btn-hero-border-color:                         #fdc92d;
   --btn-hero-hover-color:                          var(--btn-hero-color);
   --btn-hero-hover-bg:                             color-mix(in hsl, var(--btn-hero-bg) var(--hover-background), black);
   --btn-hero-hover-border-color:                   color-mix(in hsl, var(--btn-hero-border-color) var(--hover-border), black);
                                                    
-  --input-color:                                   var(--custom-yellow);
-  --input-background:                              var(--mainmenu-link-active-background);
-  --input-border:                                  var(--custom-yellow);
+  --input-color:                                   #1c1c1c;
+  --input-background:                              color-mix(in hsl, var(--mainmenu-link-active-background) 75%, black);
+  --input-border:                                  color-mix(in hsl, var(--input-background) var(--border-darken), black);
+  --input-placeholder-color:                       color-mix(in hsl, var(--input-background) 80%, white);
   --input-group-addon-background:                  var(--input-background);
   --input-group-addon-border-color:                var(--input-border);
                                                    
-  --label-color:                                   var(--input-color);
+  --label-color:                                   #EA4E32;
                                                    
   --login-background:                              var(--main-content-background);
 
   --menu-card-border-color:                        var(--main-content-link-color);
   --menu-card-border-hover-color:                  var(--main-content-link-hover-color);
 
-  --table-background:                              var(--body-background);
+  --table-background:                              color-mix(in hsl, #402a08 88%, white);
   --table-background-accent:                       color-mix(in hsl, var(--table-background) 88%, white);
   --table-caption-color:                           var(--main-content-text-color);
   --table-caption-background:                      transparent;
   --table-head-color:                              var(--main-content-text-color);
-  --table-head-background:                         var(--transparent-red); /* transparent; */
-  --table-border-color:                            var(--custom-yellow);   /* @btn-default-border; */
+  --table-head-background:                         #EA4E32; /* transparent; */
+  --table-border-color:                            #FFA621;   /* @btn-default-border; */
   --table-hover-background:                        color-mix(in hsl, var(--table-background-accent) 88%, white);
 
   --pager-background:                              #593906;
@@ -243,13 +235,19 @@
 
   --footer-outer-background:                       transparent;
   --footer-outer-border:                           transparent;
-  --footer-inner-background:                       var(--transparent-black); /* transparent; */
-  --footer-inner-border:                           var(--transparent-grey); /* transaparent; */
-  --footer-text-color:                             var(--custom-yellow); /* var(--main-content-text-color); */
-  --footer-link-color:                             var(--custom-yellow); /* var(--main-content-link-color); */
-  --footer-link-hover-color:                       color-mix(in hsl, var(--mainmenu-link-color) var(--hover-color), black);
-  --footer-link-hover-background:                  var(--transparent-red); /* var(--footer-link-background); */
+  --footer-inner-background:                       #402a08; /* transparent; */
+  --footer-inner-border:                           color-mix(in hsl, var(--footer-inner-background) var(--border-darken), black); /* transparent; */
+
+  --footer-text-color:                             var(--main-content-text-color);
+  --footer-link-color:                             var(--main-content-link-color);
+  --footer-link-hover-color:                       var(--main-content-link-hover-color);
+  --footer-link-hover-background:                  var(--main-content-link-hover-background);
   --footer-header-color:                           var(--main-content-header-color);
+
+  --social-badges-color:                           #ffa621;
+  --social-badges-background:                      transparent;
+  --social-badges-hover-color:                     #ffa621;
+  --social-badges-hover-background:                #EA4E32;
 
   --footer-back-top-text-color:                    var(--footer-text-color);
   --footer-back-top-background:                    var(--footer-outer-background);
@@ -257,15 +255,9 @@
   --footer-back-top-link-hover-color:              var(--footer-link-hover-color);
   --footer-back-top-link-hover-background:         var(--footer-link-hover-background);
 
-  --footer-thumbnail-caption-color:                var(--footer-link-color);
-  --footer-thumbnail-background:                   var(--main-content-background);
-  --footer-thumbnail-border:                       var(--custom-red); /*color-mix(in hsl, var(--footer-thumbnail-background) var(--border-darken), black);*/
-
-/*
-@thumbnail-caption-color: #786048;
-@thumbnail-border: #C0A878;
-//@thumbnail-bg: @black-30;
-*/
+  --footer-thumbnail-caption-color:                #ffa621;
+  --footer-thumbnail-background:                   color-mix(in hsl, var(--footer-inner-background) 80%, white); /*var(--main-content-background);*/
+  --footer-thumbnail-border:                       #ffa621; /*color-mix(in hsl, var(--footer-thumbnail-background) var(--border-darken), black);*/
 
   --footer-xs-outer-background:                    var(--footer-outer-background);
   --footer-xs-outer-border:                        var(--footer-outer-border);

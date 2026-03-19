@@ -46,6 +46,7 @@
   /* color and border around banner, menu bar, breadcrumbs and content */
   --body-panel-background:                         #ffffff;
 	--body-panel-border:                             color-mix(in hsl, var(--body-panel-background) var(--border-darken), black);
+  --body-panel-box-shadow:                         0 1px 1px rgba(0,0,0,.05);
   --body-panel-text-color:                         #5A554E;  /* not used cause it never happens */
   --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
 
@@ -127,6 +128,7 @@
   --main-content-text-color:                       #5A554E;
   --main-content-background:                       #f5f5f5;
   --main-content-border:                           #E5E1D8;
+  --main-content-box-shadow:                       var(--body-panel-box-shadow);
   --main-content-header-color:                     #5A5544;
   --main-content-header-font-family:               var(--header-font-family);
   --main-content-header-font-size-base:            var(--font-size-base);
@@ -167,6 +169,7 @@
   --input-color:                                   #555555;
   --input-background:                              #ffffff;
   --input-border:                                  #cccccc; /* color-mix(in hsl, var(--input-background) var(--border-darken), black); */
+  --input-placeholder-color:                       color-mix(in hsl, var(--input-background) 20%, black);
   --input-group-addon-background:                  var(--input-background);
   --input-group-addon-border-color:                var(--input-border);
                                                    
