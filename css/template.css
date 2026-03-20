@@ -8257,6 +8257,12 @@ fieldset[disabled] .navbar-xsmenu .btn-link:focus {
   break-inside: avoid;
   margin-bottom: 1em;
   display: inline-flex;
+  background-color: var(--blog-item-background);
+  width: 100%;
+  padding-right: 1em;
+  padding-left: 1em;
+  border: 1px solid var(--blog-item-border-color);
+  border-radius: 4px;
 }
 @media (min-width: 992px) {
   .blog-items.masonry-2 {

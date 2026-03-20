@@ -178,6 +178,9 @@
                                                    
   --label-color:                                   var(--input-color);
                                                    
+  --blog-item-border-color:                        #ff0000;
+  --blog-item-background:                          #00ff00;
+
   --login-background:                              var(--main-content-background);
 
   --menu-card-border-color:                        var(--main-content-link-color);

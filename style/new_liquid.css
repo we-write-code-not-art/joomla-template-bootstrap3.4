@@ -181,6 +181,9 @@
                                                    
   --label-color:                                   var(--input-color);
                                                    
+  --blog-item-background:                          rgba(82 19 132 / 5%);
+  --blog-item-border-color:                        color-mix(in hsl, var(--blog-item-background) var(--border-darken), black);
+
   --login-background:                              var(--main-content-background);
 
   --menu-card-border-color:                        var(--main-content-link-color);
