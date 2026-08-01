@@ -2,7 +2,11 @@
 <?php   if ($bannerParallaxImage!='') : ?>
 			<div class="panel" data-parallax="scroll"  data-speed="<?php echo $bannerParallaxSpeed; ?>" data-image-src="<?php echo $bannerParallaxImage; ?>">
 <?php   else: ?>
-			<div class="panel">
+			<div class="panel" style="height: 390px">
+      
+        <div style="position: absolute; z-index: -1; width: 100%; height: 390px; object-fit: cover;">
+				<jdoc:include type="modules" name="banner" style="none" />
+        </div>
 <?php   endif; ?>
 				<div class="overlay"></div>
 				<div class="panel-body">

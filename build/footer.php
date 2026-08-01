@@ -7,7 +7,7 @@
 		<footer class="footer-outer hidden-xs" >
 				<div class="<?php echo $containerFluid; ?>" >
 <?php if (($renderModules && $hasFooter) || ($this->debug)): ?>
-					<div class="rows">
+					<div class="row">
 						<div class="panel footer-inner">
 <?php if ($renderModules && $hasFooter) : ?>
               <div class="row">

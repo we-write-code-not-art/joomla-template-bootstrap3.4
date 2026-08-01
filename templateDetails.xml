@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="6.0.9" type="template" client="site" method="upgrade">
-	<name>Bootstrap 3.4</name>
+	<name>Bootstrap (2) 3.4</name>
 	<version>6.0.9</version>
 	<creationDate>2/1/2026</creationDate>
 	<author>Michael E Allen</author>
@@ -9,7 +9,7 @@
 	<copyright>Copyright(C)2016 Michael E Allen. All rights reserved.</copyright>
 	<description>Basic Bootstrap 3.4 enabled template</description>
     <updateservers>
-      <server type="extension" name="bootstrap3.4" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
+      <server type="extension" name="bootstrap34" priority="1">https://raw.githubusercontent.com/we-write-code-not-art/joomla-template-bootstrap3.4/main/manifest.xml</server>
     </updateservers>
 	<files>
 		<filename>component.php</filename>
@@ -32,12 +32,13 @@
 		<folder>js</folder>
 		<folder>models</folder>
 		<folder>site</folder>
-		<folder>style</folder>
 	</files>
 	<positions>
 		<position>menu-collapsed</position>
 		<position>profile-collapsed</position>
 		<position>footer-collapsed</position>
+		<position>top</position>
+		<position>featured</position>
 		<position>banner</position>
 		<position>profile</position>
 		<position>search</position>
@@ -66,11 +67,11 @@
     <config>
 		<fields name="params">
 			<fieldset name="theme" label="Theme">
-				<field name="cssFile" type="filelist" default="" label="CSS File" description="pick a CSS file in this template's css folder" directory="/templates/bootstrap3.4/style" filter="" exclude="" stripext="" />
+				<field name="cssFile" type="filelist" default="" label="CSS File" description="pick a CSS file in this template's css folder" directory="/templates/bootstrap34/css/styles" filter="" exclude="" stripext="" />
 
-				<field name="cssErrorFile" type="filelist" default="" label="CSS File for Errors" description="pick a CSS file in this template's css folder for displaying error pages" directory="/templates/bootstrap3.4/style" filter="" exclude="" stripext="" />
+				<field name="cssErrorFile" type="filelist" default="" label="CSS File for Errors" description="pick a CSS file in this template's css folder for displaying error pages" directory="/templates/bootstrap34/css/styles" filter="" exclude="" stripext="" />
 
-				<field name="faviconDir" type="folderlist" default="" label="Favicon" description="pick a sub-folder under this template's favicon folder" directory="templates/bootstrap3.4/images/favicons" filter="" exclude="" stripext="" />
+				<field name="faviconDir" type="folderlist" default="" label="Favicon" description="pick a sub-folder under this template's favicon folder" directory="templates/bootstrap34/images/favicons" filter="" exclude="" stripext="" />
 
 				<field
 					name="noteFavicons"
@@ -128,6 +129,18 @@
 					<option value="1">Fluid</option>
 					<option value="0">Static</option>
 				</field>
+				<field name="fluidTopMenu"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="Top Menu"
+					description="is the top menu fluid (streched to the entire window), fixed, or streched to the main content's container"
+				>
+					<option value="1">Fluid</option>
+					<option value="0">Static</option>
+					<option value="2">Stetched</option>
+				</field>
+
 				<field name="fluidMainMenu"
 					type="radio"
 					class="btn-group"
@@ -392,7 +405,7 @@
 				<field type="spacer" name="" label="&lt;h3&gt;Parallax&lt;/h3&gt;" />
 					<field name="bannerParallaxImage" class="" type="media" default=""
 						label="Image"
-						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+						description="TPL_WWCNA_BOOTSTRAP34_BANNER_DESC" />
 					<field name="bannerParallaxSpeed" type="text" default="" showon="bannerParallaxImage!:"
 						label="Speed"
 						description=""
@@ -401,7 +414,7 @@
 				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
 					<field name="bannerBackgroundImage" class="" type="media" default=""
 						label="Image"
-						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+						description="TPL_WWCNA_BOOTSTRAP34_BANNER_DESC" />
 					<field name="bannerBackgroundImageSize" showon="bannerBackgroundImage!:"
 						type="radio"
 						class="btn-group btn-group-yesno"
@@ -733,7 +746,7 @@
 				<field type="spacer" name="" label="&lt;h3&gt;Parallax&lt;/h3&gt;" />
 					<field name="errorBannerParallaxImage" class="" type="media" default=""
 						label="Image"
-						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+						description="TPL_WWCNA_BOOTSTRAP34_BANNER_DESC" />
 					<field name="errorBannerParallaxSpeed" type="text" default="" showon="errorBannerParallaxImage!:"
 						label="Speed"
 						description=""
@@ -742,7 +755,7 @@
 				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
 					<field name="errorBannerBackgroundImage" class="" type="media" default=""
 						label="Image"
-						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+						description="TPL_WWCNA_BOOTSTRAP34_BANNER_DESC" />
 					<field name="errorBannerBackgroundImageSize" showon="errorBannerBackgroundImage!:"
 						type="radio"
 						class="btn-group btn-group-yesno"
@@ -946,7 +959,7 @@
 				<field type="spacer" name="" label="&lt;h3&gt;Background&lt;/h3&gt;" />
 					<field name="xsMenuBackgroundImage" class="" type="media" default=""
 						label="Image"
-						description="TPL_WWCNA_BOOTSTRAP3.4_BANNER_DESC" />
+						description="TPL_WWCNA_BOOTSTRAP34_BANNER_DESC" />
 					<field name="xsMenuBackgroundImageSize" showon="xsMenuBackgroundImage!:"
 						type="radio"
 						class="btn-group btn-group-yesno"

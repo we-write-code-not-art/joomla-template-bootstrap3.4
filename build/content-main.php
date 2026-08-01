@@ -4,9 +4,13 @@
 						<div class="panel-body">
 <?php endif; ?>
 						<jdoc:include type="message" />
-						<jdoc:include type="modules" name="content-header" style="none" />
+            <div class="content-header">
+              <jdoc:include type="modules" name="content-header" />
+            </div>
 						<jdoc:include type="component" />
-						<jdoc:include type="modules" name="content-footer" style="none" />
+            <div class="content-footer">
+              <jdoc:include type="modules" name="content-footer"/>
+            </div>
 <?php if ($mainContentInWell) : ?>
 						</div>
 					</div>

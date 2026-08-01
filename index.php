@@ -73,7 +73,12 @@ HTMLHelper::_('script', 'jquery.min.js', ['version' => 'auto', 'relative' => tru
 HTMLHelper::_('script', 'bootstrap.min.js', ['version' => 'auto', 'relative' => true]);
 // Add Stylesheets
 $doc->addStyleSheet($templatePath . '/css/template.css');
-$doc->addStyleSheet($templatePath . '/style/'.$cssFile);
+$doc->addStyleSheet($templatePath . '/css/styles/'.$cssFile);
+
+$wa->registerAndUseStyle(
+    'bootstrap-icons',
+    'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'
+);
 
 // Load optional RTL Bootstrap CSS
 HTMLHelper::_('bootstrap.loadCss', false, $this->direction);
@@ -108,6 +113,9 @@ else
 $isFluid = $params->get('fluidContainer');
 $fluid = $isFluid ? '-fluid' : '';
 $containerFluid="container" . $fluid;
+
+$isTopMenuFluid = $params->get('fluidTopMenu');
+$topMenuFluid=($isTopMenuFluid==1)?'row':'';
 
 $isMainMenuFluid = $params->get('fluidMainMenu');
 $mainMenuFluid=($isMainMenuFluid==1)?'row':'';
@@ -153,8 +161,10 @@ $hasCollapsedMenu = $this->countModules('menu-collapsed')>0;
 $hasCollapsedProfileMenu = $this->countModules('profile-collapsed')>0;
 $hasCollapsedFooterMenu = $this->countModules('footer-collapsed')>0;
 $hasProfileMenu = $this->countModules('profile')>0;
+$hasTopMenu = $this->countModules('top')>0;
 $hasMainMenu = $this->countModules('main-menu')>0;
 $hasBreadcrumbs = $this->countModules('breadcrumbs')>0;
+$hasFeatured = $this->countModules('featured')>0;
 $hasSearch = $this->countModules('search')>0;
 $hasSidebarLeft = $this->countModules('sidebar-left')>0;
 $hasSidebarRight = $this->countModules('sidebar-right')>0;
@@ -246,7 +256,7 @@ if ($xsBannerShowSiteDescription)
 
 $xsBannerBackgroundImage = $this->params->get('xsBannerBackgroundImage')==""?"":(Uri::root().$this->params->get('xsBannerBackgroundImage'));
 
-$showxsBanner=(($xsBannerSiteName!="" && $xsBannerSiteDescription!="") || $xsBannerBackgroundImage!="");
+$showxsBanner=(($xsBannerSiteName!="" || $xsBannerSiteDescription!="") || $xsBannerBackgroundImage!="");
 $showxsBannerAll=($showxsBanner || $hasxsBannerHeader || $hasxsBannerFooter);
 
 $bannerParallaxImage = $this->params->get('bannerParallaxImage')==""?"":(Uri::root().$this->params->get('bannerParallaxImage'));
@@ -297,7 +307,7 @@ $wa->useStyle('fontawesome');
 	<script src="<?php echo $templatePath; ?>/js/jquery.parallax.min.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<?php include "css.php" ?>
+<?php include "build/css.php" ?>
 
 	<!--[if lt IE 9]>
 		<script src="<?php echo Uri::root(true); ?>/media/jui/js/html5.js"></script>
@@ -358,6 +368,10 @@ $wa->useStyle('fontawesome');
 
   // static is handled in body.php
   include "build/mainmenu-not-static.php";
+?>
+
+
+<?php
 
   include "build/body.php"; 
 

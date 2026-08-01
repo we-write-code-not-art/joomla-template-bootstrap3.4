@@ -22,6 +22,25 @@
 			</div>
 		</nav>
 <?php endif; ?>
+
+<?php if ($renderModules && $hasTopMenu) : ?>
+    <?php $xsMenuSiteName1 = "";
+    $topMenuBrandImage="/images/templates/remembering-photos/site/top-brand.png"; ?>
+		<nav class="navbar navbar-topmenu hidden-xs <?php echo $topMenuFluid; ?>" >
+			<!--div class="<?php echo $containerFluid; ?>"-->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">
+						<span><img alt="<?php echo $xsMenuSiteName1; ?>" height="40px" src="<?php print $topMenuBrandImage; ?>" /></span>
+						<span><?php echo $xsMenuSiteName1; ?></span>
+					</a>
+				</div>
+				<div class="pull-left">
+					<jdoc:include type="modules" name="top" style="none" />
+        </div>
+			<!--/div-->
+		</nav>
+<?php endif; ?>
+
 <?php 
   if ($showxsBannerAll) :
     include "banner-xs.php";

@@ -1,0 +1,836 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Tinos');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* some style specific tweaks */
+.site {
+  padding-bottom: 0;
+}
+
+body .site {
+  margin-bottom: 0;
+}
+
+.panel.footer-inner {
+  margin-bottom: 0;
+}
+
+.body-panel {
+  padding: 0;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
+
+.navbar-topmenu li a:hover {
+  border-bottom: 2px solid #7da361;
+  border-radius: 0;
+}
+
+.navbar-topmenu .navbar-nav > .open > a:hover,
+.navbar-topmenu .navbar-nav > .open > a:focus {
+  border-bottom: transparent;
+  border-radius: 0;
+}
+
+.navbar-topmenu .navbar-nav .dropdown-menu > li > a:hover, 
+.navbar-topmenu .navbar-nav .dropdown-menu > li > a:focus {
+  border-bottom: transparent;
+  border-radius: 0;
+}
+
+.banner .panel {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.carousel-indicators {
+  bottom: 0px;
+}
+
+#banner-carousel img, .piwigo_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter:
+    grayscale(100%) 
+}
+
+#banner-carousel::before, .piwigo_image::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,0) 45%,
+            rgba(0,0,0,.30) 100%
+        );
+
+    z-index: 1;
+}
+
+#banner-carousel::after, .piwigo_image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(236,138,0,.18),
+            rgba(236,138,0,.18)
+        );
+
+    pointer-events:none;
+}
+
+.navbar-xsmenu-sitename-image {
+  padding-top: 3px;
+}
+
+.piwigo_image{
+    position:absolute;
+
+    xtop:-15px;
+    xleft:-15px;
+    xright:-15px;
+    xbottom:-15px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom:0px;
+
+    z-index:0;
+border-radius: 4px 4px 0 0;
+}
+
+.piwigo_image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    object-position:center center;
+
+    display:block;
+  border-radius: 4px 4px 0 0;
+}
+
+.banner-xs .panel-body, .banner-xs .panel-body .row {
+  padding-top: 0;
+}
+
+.banner-xs .panel-body h2 {
+  font-size: 20px;
+}
+
+.banner-xs .btn {
+  font-size: 10px;
+}
+.breadcrumb {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.main-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.main-content .panel {
+  margin-bottom: 0;
+}
+
+.navbar-topmenu .navbar-nav {
+  text-transform: uppercase;
+}
+
+.footer-outer {
+  margin: 0;
+}
+
+.footer-outer .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-outer .container > .row {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moduletable.feature-card {
+  border-color: #e5e1d8;
+  background-color: #fbfbfb;
+}
+
+.page-slider {
+   width: 100%;
+    max-width: 100%;
+}
+
+.page-slider img {
+    max-width: 100%;
+}
+.content-header .feature-card {
+  border-color: #e5e1d8;
+  background-color: #fbfbfb;
+  padding: 15px;
+}  
+
+.content-header .feature-card .card-header {
+  margin-bottom: 0;
+}
+
+.content-header .feature-card .card-body {
+  padding: 0;
+}  
+
+.content-header .feature-card ul {
+  padding-inline-start: 0;
+  margin-bottom: 0;
+  margin-block-end: 0;
+}  
+
+.content-header .feature-card .card-body .media .media-left {
+  padding-left: 0;
+}  
+
+.content-header .card-header {
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  border: 0;
+}
+  
+.content-header .photos .feature-card .card-header {
+  color: #486435;
+}
+
+.content-header .photos .feature-card .card-header::before {
+  content: "\F219";
+  font-family: "bootstrap-icons";
+  font-weight: 900; /* 900 is required for Solid icons */
+  display: inline-block;
+  margin-right: 8px; /* Adds space between icon and text */
+}
+
+.content-header .stories .feature-card .card-header {
+  font color: #343A40;
+}
+  
+.content-header .stories .feature-card .card-header::before {
+  content: "\F192";
+  font-family: "bootstrap-icons";
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/*
+.call-to-action .call-to-action-card:not(:last-child) {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  box-shadow: none;
+}
+
+.call-to-action .call-to-action-card:last-child {
+  border: 0;
+  box-shadow: none;
+}
+*/
+.call-to-action .link .btn {
+  padding-left: 0;
+}
+
+.call-to-action .button .btn {
+  color: #F8F7F4;
+  background-color: #486435;
+  border-color: transparent;
+}
+
+.call-to-action.xs .call-to-action-card {
+  border-radius: 0; 
+  border: 0;
+  box-shadow: none;
+}
+/*
+.call-to-action.xs .call-to-action-card:nth-child(-n+2) {
+  border-bottom: 1px solid var(--call-to-action-card-border);
+}
+*/
+
+.call-to-action.xs .call-to-action-card:nth-child(odd) {
+  border-right: 1px solid var(--call-to-action-card-border);
+}
+
+.call-to-action.xs .call-to-action-card .link a::after {
+  content: "\f101"; /* Unicode for fa-angles-right */
+  font-family: "Font Awesome 6 Free"; 
+  font-weight: 900;
+  display: inline-block;
+  margin-left: 8px; /* Adds space between icon and text */
+}
+
+.footer-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.footer-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.footer-outer .panel {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner .icon-circle {
+  width: 32px; 
+  height: 32px; 
+  min-width: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* joomla likes to add a character for use when this is font-awesome */
+.footer-inner .icon-circle:before {
+  content: "";
+}
+
+.footer-inner .icon-circle i {
+  font-size: 16px;
+}
+
+.footer-inner h3 {
+  font-family: var(--header-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .85rem;
+  color: var(--body-background);
+  text-transform: uppercase;
+}
+
+.footer-inner .row > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner .row > div > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner ul {
+  padding-inline-start: 0;
+  margin-bottom: 0;
+  margin-block-end: 0;
+  list-style-type: none; /* Removes the bullets */
+  padding: 0;            /* Removes default indentation */
+  margin: 0;             /* Removes default spacing */
+}  
+
+
+
+
+
+
+
+
+
+
+.footer-inner-xs .footer-cards {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-inner-xs .footer-card {
+  border-radius: 0; 
+}
+
+.footer-inner-xs .footer-card:nth-child(odd) {
+  border-right: 1px solid var(--call-to-action-card-border);
+}
+
+.footer-outer-xs .panel {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner-xs .icon-circle {
+  width: 32px; 
+  height: 32px; 
+  min-width: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* joomla likes to add a character for use when this is font-awesome */
+.footer-inner-xs .icon-circle:before {
+  content: "";
+}
+
+.footer-inner-xs .icon-circle i {
+  font-size: 16px;
+}
+
+.footer-inner-xs h3 {
+  font-family: var(--header-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .85rem;
+  color: var(--body-background);
+  text-transform: uppercase;
+}
+
+.footer-inner-xs .row > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner-xs .row > div > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-inner-xs ul {
+  padding-inline-start: 0;
+  margin-bottom: 0;
+  margin-block-end: 0;
+  list-style-type: none; /* Removes the bullets */
+  padding: 0;            /* Removes default indentation */
+  margin: 0;             /* Removes default spacing */
+}  
+
+.footer-inner-xs .button a {
+   color: var(--footer-xs-link-color);
+   background-color: #486435;
+   border-color: transparent;
+}
+
+.footer-inner-xs .button a:hover, .footer-inner-xs .button a:active {
+   color: var(--footer-xs-link-color);
+   background-color: color-mix(in hsl, #486435 var(--hover-background), black);
+   border-color: transparent;
+}
+
+
+
+
+
+
+
+
+a#back-top {
+  color: transparent;
+  font-size: 0;
+  display: none;
+}
+
+:root {
+  /* convenience colors */
+  --transparent-black:   rgba(0 0 0 / 75%);
+  --transparent-grey:    rgba(48 48 48 / 75%);
+  --transparent-red:     rgba(142  65  65 / 30%);
+  --custom-red:          #8e4141;
+  --custom-yellow:       #fdc92d;
+  --darkened-red:        color-mix(in srgb, #8e4141 70.5%, black);
+  --darkest-red:         color-mix(in srgb, #8e4141 26%, black);
+
+  /* darken and lighten default values */
+  --border-darken:     93.5%;
+  --hover-color:       88%;
+  --hover-background:  90%;
+  --hover-border:      88%;
+
+  /* font family defaults */
+  --serif-font-family-fallback:                    "Tinos", "Georgia", "Times New Roman", "Times", "serif";
+  --sans-serif-font-family-fallback:               "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+
+  --header-font-family:                            'Inter', var(--serif-font-family-fallback);
+  --text-font-family:                              var(--sans-serif-font-family-fallback);
+
+  --font-size-base:                                14px;
+
+  /* background color of the entire page */
+	--body-background:                               #F8F7F4; /*X*/
+  --body-font-family:                              var(--text-font-family);
+
+  /* user profile bar fixed to the top */
+  --user-menu-text-color:                          var(--custom-yellow);
+  --user-menu-background:                          rgba(142  65  65 / 80%);
+  --user-menu-border:                              color-mix(in hsl, var(--custom-red) var(--border-darken), black); /* color-mix(in hsl, var(--user-menu-background) var(--border-darken), black); */
+  --user-menu-link-color:                          var(--user-menu-text-color);
+  --user-menu-link-hover-color:                    color-mix(in hsl, var(--user-menu-text-color) var(--hover-color), black);
+  --user-menu-link-hover-background:               transparent;
+  --user-menu-link-active-color:                   color-mix(in hsl, var(--user-menu-text-color) 80%, black);
+  --user-menu-link-active-background:              transparent;
+  --user-menu-link-disabled-color:                 #777777;
+  --user-menu-link-disabled-background:            transparent;
+  --user-menu-brand-color:                         var(--user-menu-link-color);
+  --user-menu-brand-hover-color:                   color-mix(in hsl, var(--user-menu-brand-color) var(--hover-color), black);
+  --user-menu-brand-hover-background:              transparent;
+                                                   
+  --user-menu-image-border-color:                  #ff9900;
+  --user-menu-image-border-active-color:           #ffff01;
+  --user-menu-image-border-hover-color:            #ffcc73;
+
+  /* color and border around banner, menu bar, breadcrumbs and content */
+  --body-panel-background:                         transparent;
+	--body-panel-border:                             transparent;
+  --body-panel-box-shadow:                         0 1px 1px rgba(0,0,0,.05);
+  --body-panel-text-color:                         #ffffff;  /* not used cause it never happens */
+  --body-panel-heading-border:                     #000000;  /* not used cause it never happens */
+
+  --banner-text-color:                             #ffffff; /*X*/
+  --banner-background:                             #24323F; /*X*/
+  --banner-border:                                 color-mix(in hsl, var(--banner-background) var(--border-darken), black);
+  --banner-header-color:                           #ffffff; /*X*/     /* this is for the site's name if shown */
+  --banner-header-font-family:                     var(--header-font-family);
+
+  --topmenu-text-color:                           #343A40;  /*X*/ /* not used cause it never happens */
+  --topmenu-background:                           #F8F7F4;
+  --topmenu-border:                               transparent; /*color-mix(in hsl, var(--mainmenu-background) var(--border-darken), black);*/
+  --topmenu-font-family:                          var(--header-font-family);
+  --topmenu-font-size:                            var(--font-size-base);
+  --topmenu-link-color:                           var(--topmenu-text-color);
+  --topmenu-link-hover-color:                     #82a26e;
+  --topmenu-link-hover-background:                transparent;
+  --topmenu-link-active-color:                    #7da361;
+  --topmenu-link-active-background:               transparent;
+  --topmenu-link-disabled-color:                  color-mix(in hsl, var(--topmenu-link-hover-color) 80%, black);
+  --topmenu-link-disabled-background:             transparent;
+
+  --mainmenu-text-color:                           #343A40;  /*X*/ /* not used cause it never happens */
+  --mainmenu-background:                           #F8F7F4;
+  --mainmenu-border:                               transparent; /*color-mix(in hsl, var(--mainmenu-background) var(--border-darken), black);*/
+  --mainmenu-font-family:                          var(--header-font-family);
+  --mainmenu-font-size:                            calc(var(--font-size-base));
+  --mainmenu-link-color:                           var(--mainmenu-text-color);
+  --mainmenu-link-hover-color:                     #82a26e;
+  --mainmenu-link-hover-background:                transparent;
+  --mainmenu-link-active-color:                    #7da361;
+  --mainmenu-link-active-background:               transparent;
+  --mainmenu-link-disabled-color:                  color-mix(in hsl, var(--mainmenu-link-hover-color) 80%, black);
+  --mainmenu-link-disabled-background:             transparent;
+
+  /* probly not used? */
+  --mainmenu-brand-color:                          var(--custom-yellow); /*var(--mainmenu-link-color);*/
+  --mainmenu-brand-hover-color:                    color-mix(in hsl, var(--mainmenu-link-color) var(--hover-color), black);
+  --mainmenu-brand-hover-background:               transparent;
+
+  --dropdown-font-family:                          var(--header-font-family);
+  --dropdown-font-size:                            var(--mainmenu-font-size);
+  --dropdown-background:                           var(--mainmenu-background);
+  --dropdown-border:                               #7da361;
+  --dropdown-divider-background:                   #82a26e;
+  --dropdown-link-color:                           var(--mainmenu-link-color);
+  --dropdown-link-hover-color:                     var(--mainmenu-link-hover-color);
+  --dropdown-link-hover-background:                var(--mainmenu-link-hover-background);
+  --dropdown-link-active-color:                    var(--mainmenu-link-active-color);
+  --dropdown-link-active-background:               var(--mainmenu-link-active-background);
+  --dropdown-link-disabled-color:                  var(--mainmenu-link-disabled-color);
+  --dropdown-header-font-family:                   var(--dropdown-font-family);
+  --dropdown-header-font-size:                     var(--dropdown-font-size);
+  --dropdown-header-color:                         var(--dropdown-link-color);
+
+  --xs-banner-text-color:                          var(--banner-text-color);
+  --xs-banner-background:                          var(--banner-background);
+  --xs-banner-border:                              var(--banner-border);
+  --xs-banner-header-color:                        var(--banner-header-color);
+  --xs-banner-header-font-family:                  var(--banner-header-font-family);
+
+  --xs-menu-text-color:                            var(--mainmenu-text-color);
+  --xs-menu-background:                            #f9f6ee; /*var(--mainmenu-background);*/
+  --xs-menu-header-background:                     #fbf8f3; /*var(--mainmenu-background);*/
+  --xs-menu-border:                                color-mix(in hsl, var(--xs-menu-header-background) var(--border-darken), black);
+  --xs-menu-link-color:                            var(--mainmenu-link-color);
+  --xs-menu-link-hover-color:                      var(--mainmenu-link-active-color);
+  --xs-menu-link-hover-background:                 var(--mainmenu-link-active-background);
+  --xs-menu-link-active-color:                     var(--mainmenu-link-active-color);
+  --xs-menu-link-active-background:                color-mix(in hsl, var(--xs-menu-background) 95%, white); /*var(--mainmenu-link-active-background);*/
+  --xs-menu-link-disabled-color:                   var(--mainmenu-link-disabled-color);
+  --xs-menu-link-disabled-background:              var(--mainmenu-link-disabled-background);
+  --xs-menu-brand-color:                           #101c2c; /*var(--mainmenu-brand-color);*/
+  --xs-menu-brand-border-color:                    transparent;
+  --xs-menu-brand-hover-color:                     var(--mainmenu-link-hover-color);
+  --xs-menu-brand-hover-background:                var(--mainmenu-link-hover-background);
+  --xs-menu-toggle-background:                     var(--xs-menu-header-background);
+  --xs-menu-toggle-hover-background:               color-mix(in hsl, var(--xs-menu-toggle-background) var(--hover-background), black);
+  --xs-menu-toggle-icon-bar-background:            var(--xs-menu-brand-color);
+  --xs-menu-toggle-border-color:                   var(--xs-menu-text-color);
+  --xs-menu-divider-background:                    var(--custom-yellow);
+  --xs-menu-avatar-border-color:                   transparent;
+
+  --breadcrumb-text-color:                         #65b830; /*#a67c27;*/ /* "current" location, not clickable */
+  --breadcrumb-background:                         #3e3e3d; /*var(--transparent-black);*/
+  --breadcrumb-border:                             transparent; /*color-mix(in hsl, var(--breadcrumb-background) var(--border-darken), black);*/
+  --breadcrumb-divider:                            " · ";
+  --breadcrumb-divider-color:                      #f1b63f; /*var(--breadcrumb-text-color);*/
+  --breadcrumb-link-color:                         #f8f8f8; /*#486435;*/  /* "parent" paths, clickable */
+  --breadcrumb-link-hover-color:                   color-mix(in hsl, var(--breadcrumb-link-color) var(--hover-background), black);
+
+  --featured-text-color:                           #343A40;
+  --featured-font-family:                          var(--text-font-family);
+  --featured-font-size:                            1.18rem;
+  --featured-line-height:                          1.75;
+  --featured-header-color:                         #000000;
+  --featured-header-font-family:                   var(--header-font-family);
+  --featured-header-font-size:                     2rem;
+  --featured-background:                           transparent;
+  --featured-border:                               transparent;
+  --featured-card-border:                          #e5e1d8;
+
+  --featured-button-color:                         #ffffff;
+  --featured-button-bg:                            #ff0000;
+  --featured-button-border:                        #0000ff;
+  --featured-button-hover-color:                   #ffff00;
+  --featured-button-hover-bg:                      #ff00ff;
+  --featured-button-hover-border:                  #00ffff;
+
+  --featured-1-background:                         #fbfbfb;
+  --featured-1-border:                             var(--featured-card-border); 
+  --featured-1-header-color:                       #486435;
+  --featured-1-header-font-family:                 var(--featured-header-font-family);
+  --featured-1-header-font-size:                   var(--featured-header-font-size);
+  --featured-1-text-color:                         var(--featured-text-color);
+  --featured-1-font-size:                          var(--featured-font-size);
+  --featured-1-icon-color:                         var(--featured-1-background);
+  --featured-1-icon-background:                    #486435;/*rgba(92,143,55,1);*/
+  --featured-1-button-color:                       #fbfbfb;
+  --featured-1-button-bg:                          #486435;
+  --featured-1-button-border:                      transparent;
+  --featured-1-button-hover-color:                 var(--featured-1-button-color);
+  --featured-1-button-hover-bg:                    color-mix(in hsl, var(--featured-1-button-bg) var(--hover-background), black);
+  --featured-1-button-hover-border:                var(--featured-1-button-border);
+
+  --featured-2-background:                         #fbfbfb;
+  --featured-2-border:                             var(--featured-card-border); 
+  --featured-2-header-color:                       #30587a;
+  --featured-2-header-font-family:                 var(--featured-header-font-family);
+  --featured-2-header-font-size:                   var(--featured-header-font-size);
+  --featured-2-text-color:                         var(--featured-text-color);
+  --featured-2-font-size:                          var(--featured-font-size);
+  --featured-2-icon-color:                         var(--featured-2-background);
+  --featured-2-icon-background:                    #30587a;/*rgba(92,143,55,1);*/
+  --featured-2-button-color:                       #fbfbfb;
+  --featured-2-button-bg:                          #30587a;
+  --featured-2-button-border:                      transparent;
+  --featured-2-button-hover-color:                 var(--featured-2-button-color);
+  --featured-2-button-hover-bg:                    color-mix(in hsl, var(--featured-2-button-bg) var(--hover-background), black);
+  --featured-2-button-hover-border:                var(--featured-2-button-border);
+
+  --featured-3-background:                         #fbfbfb;
+  --featured-3-border:                             var(--featured-card-border); 
+  --featured-3-header-color:                       #a67c27;
+  --featured-3-header-font-family:                 var(--featured-header-font-family);
+  --featured-3-header-font-size:                   var(--featured-header-font-size);
+  --featured-3-text-color:                         var(--featured-text-color);
+  --featured-3-font-size:                          var(--featured-font-size);
+  --featured-3-icon-color:                         var(--featured-2-background);
+  --featured-3-icon-background:                    #a67c27;/*rgba(92,143,55,1);*/
+  --featured-3-button-color:                       #fbfbfb;
+  --featured-3-button-bg:                          #a67c27;
+  --featured-3-button-border:                      transparent;
+  --featured-3-button-hover-color:                 var(--featured-3-button-color);
+  --featured-3-button-hover-bg:                    color-mix(in hsl, var(--featured-3-button-bg) var(--hover-background), black);
+  --featured-3-button-hover-border:                var(--featured-3-button-border);
+   
+  --main-content-text-color:                       #343A40; /*X*/
+  --main-content-background:                       #F8F7F4; /*X*/
+  --main-content-border:                           transparent; /*var(--transparent-grey);*/
+  --main-content-box-shadow:                       var(--body-panel-box-shadow);
+  --main-content-header-color:                     var(--custom-yellow);
+  --main-content-header-font-family:               var(--header-font-family);
+  --main-content-header-font-size-base:            var(--font-size-base);
+  --main-content-header-hover-color:               var(--main-content-header-color);
+  --main-content-header-hover-background:          transparent;
+  --main-content-divider-color:                    var(--custom-yellow);
+  --main-content-link-color:                       #5C8F37; /*X*/
+  --main-content-link-hover-color:                 #456B29; /*X*/ /*color-mix(in hsl, var(--main-content-link-color) var(--hover-color), black); */ /* 85% */
+  --main-content-link-hover-background:            transparent; /*X*/
+  --main-content-muted-color:                      color-mix(in hsl, #000000 53.3%, white);
+  --main-content-muted-link-color:                 var(--main-content-muted-color);
+  --main-content-muted-link-hover-color:           var(--main-content-muted-link-color);
+  --main-content-muted-link-hover-background:      transparent;
+  --main-content-icon-link-color:                  var(--main-content-link-color);
+  --main-content-icon-link-hover-color:            var(--main-content-link-hover-color);
+  --main-content-icon-link-hover-background:       transparent;
+  --main-content-panel-heading-color:              var(--main-content-header-color);
+  --main-content-panel-heading-background:         var(--main-content-background);
+  --main-content-panel-heading-border:             var(--main-content-border);
+  --main-content-panel-body-border:                var(--main-content-border);
+  --main-content-article-image-border:             var(--main-content-border);
+  
+  --btn-default-color:                             #FFFFFF; /*X*/
+  --btn-default-bg:                                #5C8F37; /*X*/
+  --btn-default-border:                            color-mix(in hsl, var(--btn-default-border) var(--hover-border), black); /*X*/
+  --btn-default-hover-color:                       #FFFFFF; /*X*/
+  --btn-default-hover-bg:                          #456B29; /*X*/ /*color-mix(in hsl, var(--btn-default-bg) var(--hover-background), black);*/
+  --btn-default-hover-border:                      color-mix(in hsl, var(--btn-default-border) var(--hover-border), black);
+
+  /* large button displayable across entire content, only visible in xs (mobile) */
+  --btn-hero-color:                                var(--custom-yellow);
+  --btn-hero-bg:                                   var(--xs-menu-toggle-background);
+  --btn-hero-border-color:                         var(--xs-menu-toggle-icon-bar-background);
+  --btn-hero-hover-color:                          var(--btn-hero-color);
+  --btn-hero-hover-bg:                             color-mix(in hsl, var(--btn-hero-bg) var(--hover-background), black);
+  --btn-hero-hover-border-color:                   color-mix(in hsl, var(--btn-hero-border-color) var(--hover-border), black);
+                                                   
+  --input-color:                                   var(--custom-yellow);
+  --input-background:                              var(--mainmenu-link-active-background);
+  --input-border:                                  var(--custom-yellow);
+  --input-placeholder-color:                       color-mix(in hsl, var(--input-background) 80%, white);
+  --input-group-addon-background:                  var(--input-background);
+  --input-group-addon-border-color:                var(--input-border);
+                                                   
+  --label-color:                                   var(--input-color);
+                                                   
+  --blog-item-background:                          #00ff00;
+  --blog-item-border-color:                        #ff0000;
+                                                   
+  --login-background:                              var(--main-content-background);
+
+  --menu-card-border-color:                        var(--main-content-link-color);
+  --menu-card-border-hover-color:                  var(--main-content-link-hover-color);
+
+  --table-background:                              var(--body-background);
+  --table-background-accent:                       color-mix(in hsl, var(--table-background) 88%, white);
+  --table-caption-color:                           var(--main-content-text-color);
+  --table-caption-background:                      transparent;
+  --table-head-color:                              var(--main-content-text-color);
+  --table-head-background:                         var(--transparent-red); /* transparent; */
+  --table-border-color:                            var(--custom-yellow);   /* @btn-default-border; */
+  --table-hover-background:                        color-mix(in hsl, var(--table-background-accent) 88%, white);
+
+/* not currently used */
+  --pager-background:                              var(custom-red); /*#593906;*/
+  --pager-border:                                  color-mix(in hsl, var(--input-background) 95%, black);
+  --pager-link-color:                              #BE9A54;
+  --pager-link-hover-color:                        color-mix(in hsl, var(--pager-link-color) var(--hover-color), black);
+  --pager-link-hover-background:                   #593906;
+  --pager-link-hover-border:                       #BE9A54;
+  --pager-link-disabled-color:                     color-mix(in hsl, var(--pager-link-color) 80%, white);
+
+  --call-to-action-background:                     transparent;
+  --call-to-action-border:                         transparent;
+  --call-to-action-text-color:                     #343A40;
+  --call-to-action-text-font-family:               var(--text-font-family);
+  --call-to-action-text-font-size:                 1.18rem;
+  --call-to-action-line-height:                    1.75;
+  --call-to-action-header-color:                   #343A40;
+  --call-to-action-header-font-family:             var(--header-font-family);
+  --call-to-action-header-font-size:               1.75rem;
+  --call-to-action-icon-color:                     #71655a  ;/*rgba(92,143,55,1);*/
+  --call-to-action-icon-background:                transparent;
+  --call-to-action-card-border:                    #e5e1d8;
+                                                
+  --call-to-action-button-color:                   #fbfbfb;
+  --call-to-action-button-bg:                      #486435;
+  --call-to-action-button-border:                  transparent;
+  --call-to-action-button-hover-color:             var(--call-to-action-button-color);
+  --call-to-action-button-hover-bg:                color-mix(in hsl, var(--call-to-action-button-bg) var(--hover-background), black);
+  --call-to-action-button-hover-border:            var(--call-to-action-button-border);
+
+  --call-to-action-xs-icon-color:                  #F8F7F4;
+  --call-to-action-xs-icon-background:             #343a40;
+
+  --sidebar-left-color:                            var(--main-content-text-color);
+  --sidebar-left-background:                       var(--main-content-background);
+  --sidebar-left-border:                           var(--main-content-border);
+  --sidebar-left-header-color:                     var(--main-content-header-color);
+  --sidebar-left-header-font-family:               var(--header-font-family);
+  --sidebar-left-header-font-size-base:            calc(var(--font-size-base) * 2);
+  --sidebar-left-divider-color:                    var(--main-content-divider-color);
+  --sidebar-left-link-color:                       var(--main-content-link-color);
+  --sidebar-left-link-hover-color:                 var(--main-content-link-hover-color);
+  --sidebar-left-link-hover-background:            var(--main-content-link-hover-background);
+  --sidebar-left-navbar-link-color:                var(--sidebar-left-link-color);
+  --sidebar-left-navbar-link-hover-color:          var(--sidebar-left-link-hover-color);
+  --sidebar-left-navbar-link-hover-background:     var(--sidebar-left-link-hover-background);
+  --sidebar-left-navbar-link-active-color:         var(--mainmenu-link-active-color);
+  --sidebar-left-navbar-link-active-background:    var(--mainmenu-link-active-background);
+  --sidebar-left-navbar-link-disabled-color:       var(--mainmenu-link-disabled-color);
+  --sidebar-left-navbar-link-disabled-background:  var(--mainmenu-link-disabled-background); 
+
+  --sidebar-right-color:                           var(--main-content-text-color);
+  --sidebar-right-background:                      var(--main-content-background);
+  --sidebar-right-border:                          var(--main-content-border);
+  --sidebar-right-header-color:                    var(--main-content-header-color);
+  --sidebar-right-header-font-family:              var(--header-font-family);
+  --sidebar-right-header-font-size-base:           calc(var(--font-size-base) * 2);
+  --sidebar-right-divider-color:                   var(--main-content-divider-color);
+  --sidebar-right-link-color:                      var(--main-content-link-color);
+  --sidebar-right-link-hover-color:                var(--main-content-link-hover-color);
+  --sidebar-right-link-hover-background:           var(--main-content-link-hover-background);
+  --sidebar-right-navbar-link-color:               var(--sidebar-right-link-color);
+  --sidebar-right-navbar-link-hover-color:         var(--sidebar-right-link-hover-color);
+  --sidebar-right-navbar-link-hover-background:    var(--sidebar-right-link-hover-background);
+  --sidebar-right-navbar-link-active-color:        var(--mainmenu-link-active-color);
+  --sidebar-right-navbar-link-active-background:   var(--mainmenu-link-active-background);
+  --sidebar-right-navbar-link-disabled-color:      var(--mainmenu-link-disabled-color);
+  --sidebar-right-navbar-link-disabled-background: var(--mainmenu-link-disabled-background);
+
+  --footer-outer-background:                       #24323F; /*X*/
+  --footer-outer-border:                           transparent;
+  --footer-inner-background:                       transparent;
+  --footer-inner-border:                           transaparent;
+
+  --footer-text-color:                             #F8F7F4;
+  --footer-link-color:                             #F8F7F4;
+  --footer-link-hover-color:                       color-mix(in hsl, var(--footer-link-color) var(--hover-color), black);
+
+  --footer-link-hover-background:                  transparent;
+  --footer-header-color:                           #F8F7F4;
+
+  --social-badges-color:                           var(--custom-yellow);
+  --social-badges-background:                      transparent;
+  --social-badges-hover-color:                     var(--custom-yellow);
+  --social-badges-hover-background:                var(--transparent-red);
+
+  --footer-back-top-text-color:                    var(--footer-text-color);
+  --footer-back-top-background:                    var(--footer-outer-background);
+  --footer-back-top-link-color:                    var(--footer-link-color);
+  --footer-back-top-link-hover-color:              var(--footer-link-hover-color);
+  --footer-back-top-link-hover-background:         var(--footer-link-hover-background);
+
+  --footer-thumbnail-caption-color:                var(--custom-yellow);
+  --footer-thumbnail-background:                   rgba(136 136 136 / 30%); /* var(--main-content-background); */
+  --footer-thumbnail-border:                       var(--custom-red); /*color-mix(in hsl, var(--footer-thumbnail-background) var(--border-darken), black);*/
+
+  --footer-xs-outer-background:                    var(--footer-outer-background);
+  --footer-xs-outer-border:                        var(--footer-outer-border);
+  --footer-xs-inner-background:                    var(--footer-inner-background);
+  --footer-xs-inner-border:                        var(--footer-inner-border);
+                                                   
+  --footer-xs-text-color:                          var(--footer-text-color);
+  --footer-xs-link-color:                          var(--footer-link-color);
+  --footer-xs-link-hover-color:                    var(--footer-link-hover-color);
+  --footer-xs-link-hover-background:               var(--footer-link-hover-background);
+  --footer-xs-header-color:                        var(--footer-header-color);
+                                                   
+  --footer-xs-back-top-color:                      var(--footer-xs-text-color);
+  --footer-xs-back-top-background:                 var(--footer-xs-outer-background);
+  --footer-xs-back-top-link-color:                 var(--footer-xs-link-color);
+  --footer-xs-back-top-link-hover-color:           var(--footer-xs-link-hover-color);
+  --footer-xs-back-top-link-hover-background:      var(--footer-xs-link-hover-background);
+                                                   
+  --footer-xs-thumbnail-border:                    var(--footer-thumbnail-border);
+  --footer-xs-thumbnail-caption-color:             var(--footer-thumbnail-caption-color);
+  --footer-xs-thumbnail-background:                var(--footer-thumbnail-background);
+
+  --debug-caption-color:                           var(--footer-header-color); 
+}

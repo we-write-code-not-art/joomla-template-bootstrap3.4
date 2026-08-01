@@ -1,0 +1,186 @@
+<?php
+
+/**
+ * @package     Joomla.Administrator
+ * @subpackage  Weblinks
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+// phpcs:disable PSR1.Files.SideEffects
+\defined('_JEXEC') or die;
+// phpcs:enable PSR1.Files.SideEffects
+
+use Joomla\CMS\Helper\ModuleHelper;
+
+if (!$categoryNode) {
+    return;
+}
+
+$hasWeblinks = !empty($categoryNode->weblinks);
+
+$selectedCategories = (array) $params->get('catid', []);
+
+// check if the "Show Parent Category" option is turned off
+$hideParent = !$params->get('show_parent_category', 0);
+
+// a category is a root if it's selected and its parent is not
+$parent = $categoryNode->category->getParent();
+
+$isCurrentSelected = in_array($categoryNode->category->id, $selectedCategories);
+$isParentSelected = in_array($parent->id, $selectedCategories);
+
+$isRootCategory = $isCurrentSelected && !$isParentSelected;
+
+// We should skip rendering the content of this category if it's the root and the "hide parent" option is on
+$skipContent = $isRootCategory && $hideParent;
+$links = [];
+
+function safe_dump($data, $maxDepth = 5, $currentDepth = 0, &$seen = []) {
+    // 1. Memory Guard: Stop if we go too deep
+    if ($currentDepth >= $maxDepth) {
+        echo str_repeat("  ", $currentDepth) . "*MAX DEPTH REACHED*\n";
+        return;
+    }
+
+    // 2. Circular Reference Guard: Track objects and arrays
+    if (is_object($data) || is_array($data)) {
+        $id = is_object($data) ? spl_object_hash($data) : serialize($data);
+        if (in_array($id, $seen, true)) {
+            echo str_repeat("  ", $currentDepth) . "*CIRCULAR REFERENCE DETECTED*\n";
+            return;
+        }
+        $seen[] = $id;
+    }
+
+    // 3. Safe Printing
+    if (is_array($data)) {
+        echo "Array (\n";
+        foreach ($data as $key => $value) {
+            echo str_repeat("  ", $currentDepth + 1) . "[$key] => ";
+            safe_dump($value, $maxDepth, $currentDepth + 1, $seen);
+        }
+        echo str_repeat("  ", $currentDepth) . ")\n";
+    } elseif (is_object($data)) {
+        echo get_class($data) . " Object (\n";
+        foreach ((array)$data as $key => $value) {
+            echo str_repeat("  ", $currentDepth + 1) . "->$key = ";
+            safe_dump($value, $maxDepth, $currentDepth + 1, $seen);
+        }
+        echo str_repeat("  ", $currentDepth) . ")\n";
+    } else {
+        var_dump($data);
+    }
+}
+
+//echo "<hr>";
+//echo "<pre>"; safe_dump($params, 3); "</pre>";
+//echo "<pre>".$params->get("count", 0)."</pre>";
+//echo "<hr>";
+
+if (!function_exists('flatten')) {
+  function flatten($categories, &$links)
+  {
+    
+    //echo "<pre><h1>Categories: ".$categories->category->title."</h1>";
+    //echo "<h4>Categories Level: ".$categories->level."</h4>";
+    //echo "<h4>".$categories->category->title." Has Weblinks: ".!empty($categories->weblinks)."</h4>";
+    //echo "<h4>".$categories->category->title." Has Children: ".!empty($categories->children)."</h4>"; safe_dump($categories, 3); echo "</pre>";
+    //echo "<pre><h2>Categories Weblinks</h2>"; safe_dump($categories->weblinks, 3); echo "</pre>";
+    //echo "<pre><h2>Categories Children</h2>"; safe_dump($categories->children, 3); echo "</pre>";
+    
+    foreach ($categories->children as $category)
+    {
+      //echo "<pre><h1>Child: ".$category->category->title."</h1>";
+      //echo "<h4>Child Level: ".$category->level."</h4>";
+      //echo "<h4>Child Category Level: ".$category->category->level."</h4>";
+      //echo "<h4>".$category->category->title." Has Weblinks: ".!empty($category->weblinks)."</h4>";
+      //echo "<h4>".$category->category->title." Has Children: ".!empty($category->children)."</h4>"; safe_dump($category, 3); echo "</pre>";
+      //echo "<pre><h2>Child Weblinks</h2>"; safe_dump($category->weblinks, 3); echo "</pre>";
+      //echo "<pre><h2>Child Children</h2>"; safe_dump($category->children, 3); echo "</pre>";
+
+      if (!empty($category->weblinks))
+      {
+        foreach ($category->weblinks as $link)
+        {
+          //print("process links");
+          $link->category = $category->category;
+          $links[] = $link;
+        }
+      }
+
+      if (!empty($category->children))
+      {
+        foreach ($category->children as $child)
+        {
+          //print("process children");
+          flatten($child, $links);
+        }
+      }
+    }
+  }
+}
+
+flatten($categoryNode, $links);
+//echo "<hr>";
+//echo "<pre>"; safe_dump($links, 4); "</pre>";
+
+usort($links, function ($a, $b) {
+    return strtotime($b->created) <=> strtotime($a->created);
+});
+
+$categoryNode = $links;
+$links = array_slice($links, 0, $params->get('count', 0));
+echo "<hr>";
+echo "<pre>"; safe_dump($links); "</pre>";
+
+
+if ($hasWeblinks && !$skipContent) {
+
+  foreach ($categoryNode->children as $child) {
+    $originalCategoryNode = $categoryNode;
+    $categoryNode = $child;
+    require ModuleHelper::getLayoutPath('mod_weblinks', $params->get('layout', 'default') . '_category');
+    $categoryNode = $originalCategoryNode;
+  }
+
+}
+
+// Render the category content only if it has weblinks and we are not skipping it
+if ($hasWeblinks && !$skipContent) {
+    $cssClass = 'weblinks-category';
+
+    // Echo the opening tag BEFORE processing children.
+    echo '<div class="' . $cssClass . '">';
+
+    if ($params->get('groupby_showtitle', 1)) {
+        echo '<strong>' . htmlspecialchars($categoryNode->category->title, ENT_COMPAT, 'UTF-8') . '</strong>';
+    }
+
+    $weblinks = $categoryNode->weblinks;
+//$gl[] = $weblinks;
+//    echo "<pre>";print_r($weblinks);echo"</pre><hr>";
+
+    require ModuleHelper::getLayoutPath('mod_weblinks', $params->get('layout', 'default') . '_items');
+
+    // Now, process any children so they are nested inside the parent.
+    foreach ($categoryNode->children as $child) {
+        $originalCategoryNode = $categoryNode;
+        $categoryNode = $child;
+        require ModuleHelper::getLayoutPath('mod_weblinks', $params->get('layout', 'default') . '_category');
+        $categoryNode = $originalCategoryNode;
+    }
+
+    echo '</div>';
+} else {
+    // If the category has no weblinks, don't render it.
+    // But, we process its children to see if they have weblinks.
+    foreach ($categoryNode->children as $child) {
+        $originalCategoryNode = $categoryNode;
+        $categoryNode = $child;
+        require ModuleHelper::getLayoutPath('mod_weblinks', $params->get('layout', 'default') . '_category');
+        $categoryNode = $originalCategoryNode;
+    }
+}
+

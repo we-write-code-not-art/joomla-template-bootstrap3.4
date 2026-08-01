@@ -5,6 +5,13 @@
     include "content-sidebar-left.php";
   endif;
 
+  if ($hasFeatured) : ?>
+			<div class="featured hidden-xs col-lg-12">
+				<jdoc:include type="modules" name="featured" style="none" />
+			</div>
+<?php 
+  endif;
+  
   include "content-main.php";
 
   if ($hasSidebarRight) : 
