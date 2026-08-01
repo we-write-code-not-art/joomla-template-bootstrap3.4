@@ -2,7 +2,7 @@
 	<update>
 		<name>bootstrap34</name>
 		<description>Basic Bootstrap 3.4 enabled template</description>
-		<element>bootstrap3.4</element>
+		<element>bootstrap34</element>
 		<type>template</type>
 		<version>6.1.1</version>
 		<infourl title="Boostrap3.4 6.1.1">https://www.we-write-code-not-art.com/</infourl>
