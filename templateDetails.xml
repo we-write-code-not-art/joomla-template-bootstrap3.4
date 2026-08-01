@@ -14,7 +14,6 @@
 	<files>
 		<filename>component.php</filename>
 		<filename>config.php</filename>
-		<filename>css.php</filename>
 		<filename>error.php</filename>
 		<filename>index.php</filename>
 		<filename>joomla.asset.json</filename>
@@ -30,7 +29,6 @@
 		<folder>images</folder>
 		<folder>img</folder>
 		<folder>js</folder>
-		<folder>models</folder>
 		<folder>site</folder>
 	</files>
 	<positions>
